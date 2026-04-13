@@ -1,0 +1,23 @@
+# Audio recordings (provided separately by JUPUS)
+data/recordings/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+
+# Django
+db.sqlite3
+
+# Node
+node_modules/
+frontend/dist/
+
+# System
+.DS_Store
+.env
+
+# IDE
+.vscode/
+.idea/
