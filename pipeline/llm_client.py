@@ -19,9 +19,19 @@ import requests
 
 LLM_BACKEND = os.environ.get("LLM_BACKEND", "gemini")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash")
+GEMINI_API_KEY_2 = os.environ.get("GEMINI_API_KEY_2", "")
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite")
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "llama3.2")
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
+
+
+def set_api_key(key_number: int = 1):
+    """Switch which Gemini API key to use (1 or 2)."""
+    global GEMINI_API_KEY
+    if key_number == 2:
+        GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY_2", "")
+    else:
+        GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 
 
 def llm_generate(prompt: str, system: str = "", json_mode: bool = False) -> str:
@@ -69,8 +79,16 @@ def _gemini_generate(prompt: str, system: str, json_mode: bool) -> str:
             "responseMimeType": "application/json",
         }
 
-    resp = requests.post(url, json=body, timeout=60)
-    resp.raise_for_status()
+    # Retry on transient errors (429, 503)
+    for attempt in range(4):
+        resp = requests.post(url, json=body, timeout=60)
+        if resp.status_code in (429, 503) and attempt < 3:
+            wait = 2 ** attempt * 5
+            print(f"\n  API {resp.status_code}, retrying in {wait}s...", flush=True)
+            time.sleep(wait)
+            continue
+        resp.raise_for_status()
+        break
 
     data = resp.json()
     return data["candidates"][0]["content"]["parts"][0]["text"]

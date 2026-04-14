@@ -1,0 +1,962 @@
+[
+  {
+    "text": "Guten Tag, mein Name ist Jana Schmidt und ich habe eine rechtliche Frage, die ich gern mit einem Anwalt besprechen würde. Sie erreichen mich unter Johanna.schmitt.aggmail.com oder telefonisch unter plus 4 9 1 5 2 1 1 2 2 3 4 5 6. Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.0,
+        "text": "Guten Tag, mein Name ist Jana Schmidt und ich habe eine rechtliche Frage, die ich gern mit einem Anwalt besprechen würde."
+      },
+      {
+        "start": 6.0,
+        "end": 17.0,
+        "text": "Sie erreichen mich unter Johanna.schmitt.aggmail.com oder telefonisch unter plus 4 9 1 5 2 1 1 2 2 3 4 5 6."
+      },
+      {
+        "start": 17.0,
+        "end": 19.0,
+        "text": "Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 8.45,
+    "call_id": "call_01"
+  },
+  {
+    "text": "Guten Tag, ich habe eine rechtliche Frage und würde die gerne mit einer Anwildin aus der Kanzlei besprechen. Mein Name ist Herbert Herbst und Sie erreichen mich per E-Mail über h47 minus Herbst at web.de oder per Telefon über plus 4 9 1 5 7 2 3 1 4 1 2 3 1 3. Ich danke Ihnen, schönen Tag noch.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.08,
+        "text": "Guten Tag, ich habe eine rechtliche Frage und würde die gerne mit einer Anwildin aus der"
+      },
+      {
+        "start": 6.08,
+        "end": 12.120000000000001,
+        "text": "Kanzlei besprechen. Mein Name ist Herbert Herbst und Sie erreichen mich per"
+      },
+      {
+        "start": 12.120000000000001,
+        "end": 25.2,
+        "text": "E-Mail über h47 minus Herbst at web.de oder per Telefon über plus 4 9 1 5 7 2 3 1 4 1 2 3 1 3."
+      },
+      {
+        "start": 25.2,
+        "end": 27.2,
+        "text": "Ich danke Ihnen, schönen Tag noch."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 2.75,
+    "call_id": "call_02"
+  },
+  {
+    "text": "Guten Tag, mein Name ist Anika Becker und ich habe eine rechtliche Frage und würde die gerne mit einem Anwalt besprechen. Da ich jetzt gerade niemanden erreicht habe, würde ich mich freuen, wenn Sie mich per e-mail unter Anika.becker.etgmx.de anschreiben oder sich per Telefon bei mir melden. Das wäre die Plus 4 9 1 7 6 9 8 7 6 5 4 3 2. Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.62,
+        "text": "Guten Tag, mein Name ist Anika Becker und ich habe eine rechtliche Frage und würde"
+      },
+      {
+        "start": 5.62,
+        "end": 10.6,
+        "text": "die gerne mit einem Anwalt besprechen. Da ich jetzt gerade niemanden erreicht habe, würde"
+      },
+      {
+        "start": 10.6,
+        "end": 18.02,
+        "text": "ich mich freuen, wenn Sie mich per e-mail unter Anika.becker.etgmx.de anschreiben oder"
+      },
+      {
+        "start": 18.02,
+        "end": 25.36,
+        "text": "sich per Telefon bei mir melden. Das wäre die Plus 4 9 1 7 6 9 8 7 6 5 4 3 2. Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 2.11,
+    "call_id": "call_03"
+  },
+  {
+    "text": "Guten Tag, mir wurde vor zwei Tagen gekündigt und deswegen würde ich sehr gern mit einem Anwalt über die Königung sprechen, weil das meiner Meinung nach alles nicht so rechtens ist. Mein Name ist Matthias Hoffmann, das ist M-A-T-T-H-I-A-S und Hoffmann mit Double F. Und per email erreichen Sie mich unter m.hoffmann.etoutglupp.com Oder Sie rufen mich direkt an unter plus 49054783219. Das wäre auch super. Hauptsache Sie melden sich recht schnell. Ich danke Ihnen. Tschüss.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 7.0,
+        "text": "Guten Tag, mir wurde vor zwei Tagen gekündigt und deswegen würde ich sehr gern mit einem Anwalt über die Königung sprechen,"
+      },
+      {
+        "start": 7.0,
+        "end": 9.0,
+        "text": "weil das meiner Meinung nach alles nicht so rechtens ist."
+      },
+      {
+        "start": 9.0,
+        "end": 18.0,
+        "text": "Mein Name ist Matthias Hoffmann, das ist M-A-T-T-H-I-A-S und Hoffmann mit Double F."
+      },
+      {
+        "start": 18.0,
+        "end": 24.0,
+        "text": "Und per email erreichen Sie mich unter m.hoffmann.etoutglupp.com"
+      },
+      {
+        "start": 24.0,
+        "end": 31.0,
+        "text": "Oder Sie rufen mich direkt an unter plus 49054783219."
+      },
+      {
+        "start": 31.0,
+        "end": 34.0,
+        "text": "Das wäre auch super. Hauptsache Sie melden sich recht schnell."
+      },
+      {
+        "start": 34.0,
+        "end": 36.0,
+        "text": "Ich danke Ihnen. Tschüss."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 3.74,
+    "call_id": "call_04"
+  },
+  {
+    "text": "Guten Tag, ich meld mich heute mit einer rechtlichen Frage bei Ihnen. Mein Name ist Sandra Weber und es wäre schön, wenn Sie sich bei mir melden. Meine E-Mail-Adresse ist S-R-N-D-R-A-W-E-B-E-R et T-Minus-Online.de Oder noch besser sie rufen Sie mich direkt an, das wäre die Plus für 9, 1, 7, 2, 4, 4, 5, 5, 6, 6, 7, 7. Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.0,
+        "text": "Guten Tag, ich meld mich heute mit einer rechtlichen Frage bei Ihnen."
+      },
+      {
+        "start": 4.0,
+        "end": 10.0,
+        "text": "Mein Name ist Sandra Weber und es wäre schön, wenn Sie sich bei mir melden."
+      },
+      {
+        "start": 10.0,
+        "end": 18.0,
+        "text": "Meine E-Mail-Adresse ist S-R-N-D-R-A-W-E-B-E-R"
+      },
+      {
+        "start": 18.0,
+        "end": 21.0,
+        "text": "et T-Minus-Online.de"
+      },
+      {
+        "start": 21.0,
+        "end": 29.0,
+        "text": "Oder noch besser sie rufen Sie mich direkt an, das wäre die Plus für 9, 1, 7, 2, 4, 4, 5, 5, 6, 6, 7, 7."
+      },
+      {
+        "start": 29.0,
+        "end": 31.0,
+        "text": "Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 3.48,
+    "call_id": "call_05"
+  },
+  {
+    "text": "Guten Morgen, Fischer, mein Name. Ich habe eine rechtliche Frage bezüglich einer Kündigung, die mir gegenüber ausgesprochen wurde und würde mich über eine Rückmeldung freuen. Mein Name ist Klaus Fischer und meine Immeladresse ist k. F-I-S-C-H-E-R. 1983, et Gmail.com. Oder sie rufen mich an. Das wäre die Plus 4.989772.34561. Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 11.0,
+        "text": "Guten Morgen, Fischer, mein Name. Ich habe eine rechtliche Frage bezüglich einer Kündigung, die mir gegenüber ausgesprochen wurde und würde mich über eine Rückmeldung freuen."
+      },
+      {
+        "start": 11.0,
+        "end": 19.0,
+        "text": "Mein Name ist Klaus Fischer und meine Immeladresse ist k. F-I-S-C-H-E-R."
+      },
+      {
+        "start": 19.0,
+        "end": 29.0,
+        "text": "1983, et Gmail.com. Oder sie rufen mich an. Das wäre die Plus 4.989772.34561."
+      },
+      {
+        "start": 29.0,
+        "end": 31.0,
+        "text": "Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 3.27,
+    "call_id": "call_06"
+  },
+  {
+    "text": "Guten Tag, ich hatte heute einen Aufbau und fall und wird mich deswegen gerne rechtlich dazu informieren. Mein Name ist Julia Schröder. Per E-Mail würden Sie mich erreichen unter Julia.SCHRE.DRATWAP.DE oder Sie hoffen mich an. Ich bin den ganzen Tag überarreichbar unter plus 4.9151.22998877. Ich danke Ihnen für Ihren Rückruf. Danke schön.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.2,
+        "text": "Guten Tag, ich hatte heute einen Aufbau und fall und wird mich deswegen gerne"
+      },
+      {
+        "start": 3.2,
+        "end": 7.6000000000000005,
+        "text": "rechtlich dazu informieren. Mein Name ist Julia Schröder. Per E-Mail würden Sie"
+      },
+      {
+        "start": 7.6000000000000005,
+        "end": 16.44,
+        "text": "mich erreichen unter Julia.SCHRE.DRATWAP.DE oder Sie hoffen mich an. Ich bin"
+      },
+      {
+        "start": 16.44,
+        "end": 24.0,
+        "text": "den ganzen Tag überarreichbar unter plus 4.9151.22998877. Ich danke Ihnen für"
+      },
+      {
+        "start": 24.0,
+        "end": 26.0,
+        "text": "Ihren Rückruf. Danke schön."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 3.24,
+    "call_id": "call_07"
+  },
+  {
+    "text": "Guten Tag, ich habe eine Unterhaltsfrage. Mein Name ist Thomas Neumann. Thomas, T-H-O-M-A-S und Neumann, wie man spricht. Sie können sich gerne bei mir melden unter die Immeladresse, T-H-O-M-A-S, Punkt N-E-U-M-A-N-N, et G-M-X, Punkt N-E-U-M-A-S, oder per Telefon unter Plus490, 888, 999, 1, 2, 3, 4. Ich danke Ihnen für Ihre Rückmeldung.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 12.0,
+        "text": "Guten Tag, ich habe eine Unterhaltsfrage. Mein Name ist Thomas Neumann. Thomas, T-H-O-M-A-S und Neumann, wie man spricht."
+      },
+      {
+        "start": 12.0,
+        "end": 24.5,
+        "text": "Sie können sich gerne bei mir melden unter die Immeladresse, T-H-O-M-A-S, Punkt N-E-U-M-A-N-N, et G-M-X, Punkt N-E-U-M-A-S,"
+      },
+      {
+        "start": 24.5,
+        "end": 32.5,
+        "text": "oder per Telefon unter Plus490, 888, 999, 1, 2, 3, 4. Ich danke Ihnen für Ihre Rückmeldung."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 3.41,
+    "call_id": "call_08"
+  },
+  {
+    "text": "Guten Tag, ich meld mich heute bei Ihnen, weil ich eine rechtliche Frage habe, die ich gerne mit einem Anwalt besprechen würde. Und zwar ist mein Name Petra Müller. Sie können sich gerne bei Ihnen bei mir melden, das wäre Petra-M, et Yahoo.de Oder Sie rufen mich an unter plus 4.9, 1.62, 7.76, 5.5.4. Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.0,
+        "text": "Guten Tag, ich meld mich heute bei Ihnen, weil ich eine rechtliche Frage habe, die ich gerne mit einem Anwalt besprechen würde."
+      },
+      {
+        "start": 6.0,
+        "end": 14.0,
+        "text": "Und zwar ist mein Name Petra Müller. Sie können sich gerne bei Ihnen bei mir melden, das wäre Petra-M, et Yahoo.de"
+      },
+      {
+        "start": 14.0,
+        "end": 22.0,
+        "text": "Oder Sie rufen mich an unter plus 4.9, 1.62, 7.76, 5.5.4. Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 2.2,
+    "call_id": "call_09"
+  },
+  {
+    "text": "Guten Tag, ich habe eine rechtliche Frage und zwar ist mein Name Stefan Zimmermann. Es wäre schön, wenn sich die Anwälte bei mir melden würde, entweder unter der E-Mail-Adresse, das wäre S-Punkt Zimmermann, et Outlook-Punktee, oder sie rufen mich an unter plus 4, 9, 2, 1, 3, 3, 3, 4, 4, 5, 5, 6, 6. Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.6000000000000005,
+        "text": "Guten Tag, ich habe eine rechtliche Frage und zwar ist mein Name Stefan Zimmermann."
+      },
+      {
+        "start": 6.6000000000000005,
+        "end": 9.8,
+        "text": "Es wäre schön, wenn sich die Anwälte bei mir melden würde,"
+      },
+      {
+        "start": 9.8,
+        "end": 13.0,
+        "text": "entweder unter der E-Mail-Adresse, das wäre S-Punkt Zimmermann,"
+      },
+      {
+        "start": 13.0,
+        "end": 20.400000000000002,
+        "text": "et Outlook-Punktee, oder sie rufen mich an unter plus 4, 9, 2, 1, 3, 3, 3, 4, 4, 5, 5, 6, 6."
+      },
+      {
+        "start": 20.400000000000002,
+        "end": 21.8,
+        "text": "Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 2.22,
+    "call_id": "call_10"
+  },
+  {
+    "text": "Guten Tag, mein Name ist Brigitte Koch und ich steck mitten in einer Nachbarschaftsstreitigkeit. Es wäre schön, wenn sich die Anwälte bei mir per E-Mail melden würde. Das wäre BRI-G-I-T-T-E. Punkt Koch, at Freenet.de oder sie rufen mich einfach an die nächsten Tage. Das wäre plus 4.9178.1122.3344. Danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 8.0,
+        "text": "Guten Tag, mein Name ist Brigitte Koch und ich steck mitten in einer Nachbarschaftsstreitigkeit."
+      },
+      {
+        "start": 8.0,
+        "end": 12.0,
+        "text": "Es wäre schön, wenn sich die Anwälte bei mir per E-Mail melden würde."
+      },
+      {
+        "start": 12.0,
+        "end": 17.0,
+        "text": "Das wäre BRI-G-I-T-T-E."
+      },
+      {
+        "start": 17.0,
+        "end": 23.0,
+        "text": "Punkt Koch, at Freenet.de oder sie rufen mich einfach an die nächsten Tage."
+      },
+      {
+        "start": 23.0,
+        "end": 27.0,
+        "text": "Das wäre plus 4.9178.1122.3344."
+      },
+      {
+        "start": 27.0,
+        "end": 29.0,
+        "text": "Danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 3.26,
+    "call_id": "call_11"
+  },
+  {
+    "text": "Guten Morgen, mein Name ist Michael Wagner und ich habe eine rechtliche Frage, die ich gerne mit einem Anwalt besprechen würde. Daher würde ich sie bitten, sich entweder per E-Mail oder bei Telefon bei mir zu melden. E-Mail wäre Michael unterstrich Wagner, et G M X.de oder sie rufen mich einfach anders wäre plus 4.9, 6.9, 9.9, 8.8, 7.7, 6.6. Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.16,
+        "text": "Guten Morgen, mein Name ist Michael Wagner und ich habe eine rechtliche Frage, die ich gerne mit"
+      },
+      {
+        "start": 6.16,
+        "end": 10.36,
+        "text": "einem Anwalt besprechen würde. Daher würde ich sie bitten, sich entweder per"
+      },
+      {
+        "start": 10.36,
+        "end": 15.44,
+        "text": "E-Mail oder bei Telefon bei mir zu melden. E-Mail wäre Michael unterstrich Wagner,"
+      },
+      {
+        "start": 15.44,
+        "end": 24.88,
+        "text": "et G M X.de oder sie rufen mich einfach anders wäre plus 4.9, 6.9, 9.9, 8.8, 7.7, 6.6. Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 3.17,
+    "call_id": "call_12"
+  },
+  {
+    "text": "Guten Tag Sabine Krause hier. Ich habe ein rechtliches Anliegen, worüber ich gerne mit einer Anwälte entsprechen würde. Daher würde ich sie bitten, dass sie sich einfach kurz mal bei mir melden. Das wäre entweder unter der E-Mail-Adresse möglich. Sabine. Krause.Gmail.com oder sie melden sich per Telefon unter plus 4.9. 1.70.5.4.4.3.3.2.2. Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.6000000000000005,
+        "text": "Guten Tag Sabine Krause hier. Ich habe ein rechtliches Anliegen, worüber ich gerne mit einer Anwälte entsprechen würde."
+      },
+      {
+        "start": 6.6000000000000005,
+        "end": 10.0,
+        "text": "Daher würde ich sie bitten, dass sie sich einfach kurz mal bei mir melden."
+      },
+      {
+        "start": 10.0,
+        "end": 12.8,
+        "text": "Das wäre entweder unter der E-Mail-Adresse möglich."
+      },
+      {
+        "start": 12.8,
+        "end": 18.8,
+        "text": "Sabine. Krause.Gmail.com oder sie melden sich per Telefon unter plus 4.9."
+      },
+      {
+        "start": 18.8,
+        "end": 24.0,
+        "text": "1.70.5.4.4.3.3.2.2. Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 2.18,
+    "call_id": "call_13"
+  },
+  {
+    "text": "Guten Morgen, Schulz hier, Rainer Schulz. Und ich hab eine rechtliche Frage, es geht um eine Kündigung und ich würde darüber gern mit einer Anwältin sprechen. Erbesten werden Sie sich einfach per E-Mail bei mir. Das wäre R-I-N-E-R-Minus Schulz-At-Web.de Oder Sie melden sich per Telefon, das wäre plus für 9, 5, 1, 1, 6, 6, 7, 7, 7, 8, 8, 9, 9. Ich danke Ihnen auf jeden Fall. Tschüss.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.8000000000000003,
+        "text": "Guten Morgen, Schulz hier, Rainer Schulz."
+      },
+      {
+        "start": 3.8000000000000003,
+        "end": 9.200000000000001,
+        "text": "Und ich hab eine rechtliche Frage, es geht um eine Kündigung und ich würde darüber"
+      },
+      {
+        "start": 9.200000000000001,
+        "end": 11.200000000000001,
+        "text": "gern mit einer Anwältin sprechen."
+      },
+      {
+        "start": 11.200000000000001,
+        "end": 14.0,
+        "text": "Erbesten werden Sie sich einfach per E-Mail bei mir."
+      },
+      {
+        "start": 14.0,
+        "end": 21.8,
+        "text": "Das wäre R-I-N-E-R-Minus Schulz-At-Web.de"
+      },
+      {
+        "start": 21.8,
+        "end": 28.400000000000002,
+        "text": "Oder Sie melden sich per Telefon, das wäre plus für 9, 5, 1, 1, 6, 6, 7, 7, 7, 8, 8, 9, 9."
+      },
+      {
+        "start": 28.4,
+        "end": 30.4,
+        "text": "Ich danke Ihnen auf jeden Fall. Tschüss."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 3.35,
+    "call_id": "call_14"
+  },
+  {
+    "text": "Guten Morgen, mein Name ist Richter, Monika Richter und ich habe eine rechtliche Frage bezüglich einer Kündigung, die mir meine Arbeitgeber hat zukommen lassen. Genau, es wäre gut, wenn Sie sich bei mir zurückmelden, das wäre am leichtesten möglich über meine E-Ladresse Monika.richter.ertt-online.de oder Sie rufen mich an unter plus 4 9 157 9 9 0 0 1 1 2 2. Ich bedanke mich schon jetzt für irnermount dankeschön.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.88,
+        "text": "Guten Morgen, mein Name ist Richter, Monika Richter und ich habe eine rechtliche Frage bezüglich einer"
+      },
+      {
+        "start": 6.88,
+        "end": 13.4,
+        "text": "Kündigung, die mir meine Arbeitgeber hat zukommen lassen. Genau, es wäre gut, wenn Sie sich bei mir"
+      },
+      {
+        "start": 13.4,
+        "end": 19.84,
+        "text": "zurückmelden, das wäre am leichtesten möglich über meine E-Ladresse Monika.richter.ertt-online.de"
+      },
+      {
+        "start": 19.84,
+        "end": 29.32,
+        "text": "oder Sie rufen mich an unter plus 4 9 157 9 9 0 0 1 1 2 2. Ich bedanke mich schon jetzt für"
+      },
+      {
+        "start": 29.32,
+        "end": 41.18,
+        "text": "irnermount dankeschön."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 8.9,
+    "call_id": "call_15"
+  },
+  {
+    "text": "Mein Name ist James Anderson und ich habe eine rechtliche Frage. Ich würde sehr gerne mit einem Anwalt darüber sprechen und das wäre gut, wenn dieser sich bei mir meldet, entweder unter der E-Mail-Adresse James.endassen.gmail.com oder telefonisch über plus 4.9 1 6.0 5.5 1 2 3 4 5.6 Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.0,
+        "text": "Mein Name ist James Anderson und ich habe eine rechtliche Frage. Ich würde sehr gerne mit"
+      },
+      {
+        "start": 6.0,
+        "end": 11.4,
+        "text": "einem Anwalt darüber sprechen und das wäre gut, wenn dieser sich bei mir meldet, entweder unter"
+      },
+      {
+        "start": 11.4,
+        "end": 21.76,
+        "text": "der E-Mail-Adresse James.endassen.gmail.com oder telefonisch über plus 4.9 1 6.0 5.5 1 2 3 4 5.6"
+      },
+      {
+        "start": 21.76,
+        "end": 22.76,
+        "text": "Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 2.76,
+    "call_id": "call_16"
+  },
+  {
+    "text": "Hallo, mein Name ist Sophie Dubois und ich habe eine rechtliche Frage und würde damit gerne mit meiner Anbeldung sprechen. Diese könnte mich am besten per E-Mail erreichen und zwar unter SOPH.DOBOSETOUTLOG.FR oder sie rufen mich einfach an unter der Telefonnummer plus 4.9 1,7 1,6 6 2 3 4 5 6 7. Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 8.2,
+        "text": "Hallo, mein Name ist Sophie Dubois und ich habe eine rechtliche Frage und würde damit"
+      },
+      {
+        "start": 8.2,
+        "end": 16.56,
+        "text": "gerne mit meiner Anbeldung sprechen. Diese könnte mich am besten per E-Mail erreichen und zwar"
+      },
+      {
+        "start": 16.56,
+        "end": 30.22,
+        "text": "unter SOPH.DOBOSETOUTLOG.FR oder sie rufen mich einfach an unter der"
+      },
+      {
+        "start": 30.22,
+        "end": 37.599999999999994,
+        "text": "Telefonnummer plus 4.9 1,7 1,6 6 2 3 4 5 6 7. Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 2.8,
+    "call_id": "call_17"
+  },
+  {
+    "text": "Guten Tag und zwar habe ich eine Anfrage, die sich an einen Anwalt richtet. Daher würde ich mich sehr beeindruckt, wo meine E-Mail freuen. Mein Name ist Marco Rossi. Meine E-Mail-Adresse ist m. Rossi, et libero.it und meine Telefonnummer wäre die Plus 4.9, 1.7577345678. Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.6000000000000005,
+        "text": "Guten Tag und zwar habe ich eine Anfrage, die sich an einen Anwalt richtet."
+      },
+      {
+        "start": 5.6000000000000005,
+        "end": 9.200000000000001,
+        "text": "Daher würde ich mich sehr beeindruckt, wo meine E-Mail freuen."
+      },
+      {
+        "start": 9.200000000000001,
+        "end": 11.700000000000001,
+        "text": "Mein Name ist Marco Rossi."
+      },
+      {
+        "start": 11.700000000000001,
+        "end": 17.7,
+        "text": "Meine E-Mail-Adresse ist m. Rossi, et libero.it"
+      },
+      {
+        "start": 17.7,
+        "end": 24.8,
+        "text": "und meine Telefonnummer wäre die Plus 4.9, 1.7577345678."
+      },
+      {
+        "start": 24.8,
+        "end": 26.2,
+        "text": "Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 2.16,
+    "call_id": "call_18"
+  },
+  {
+    "text": "Guten Tag, mein Name ist Emily Johnson und ich habe eine rechtliche Frage in sichlich eines Nachbarschaftsstreits. Ich würde mich sehr über ein Rückruf und plus 4.9, 1.5.2, 8.8, 4.5.6, 7.8.9 freuen oder sie melden sich per E-Mail, das wäre dann Emily. Johnson et Yahoo.com. Genau, ich danke Ihnen. Schöntag noch.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.5200000000000005,
+        "text": "Guten Tag, mein Name ist Emily Johnson und ich habe eine rechtliche Frage"
+      },
+      {
+        "start": 5.5200000000000005,
+        "end": 11.24,
+        "text": "in sichlich eines Nachbarschaftsstreits. Ich würde mich sehr über ein Rückruf"
+      },
+      {
+        "start": 11.24,
+        "end": 18.96,
+        "text": "und plus 4.9, 1.5.2, 8.8, 4.5.6, 7.8.9 freuen oder sie melden sich per"
+      },
+      {
+        "start": 18.96,
+        "end": 26.96,
+        "text": "E-Mail, das wäre dann Emily. Johnson et Yahoo.com. Genau, ich danke Ihnen."
+      },
+      {
+        "start": 26.96,
+        "end": 27.96,
+        "text": "Schöntag noch."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 3.99,
+    "call_id": "call_19"
+  },
+  {
+    "text": "Guten Tag, mein Name ist Karlos Garcia und ich habe eine rechtliche Frage und zwar ich hatte heute einen Aufverunfer und mitm Steinen gehend gerne beraten lassen. Deswegen bräuchte ich einen Rückruf von ihn entweder über die Telefonnummer plus für 9, 1, 6, 3, 9, 9, 5, 6, 7, 8, 9, 0 oder sie schreiben meine E-Mail an Carlos.Gasja.et. hotmail.es. Ich danke Ihnen, schönen Tag noch.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.68,
+        "text": "Guten Tag, mein Name ist Karlos Garcia und ich habe eine rechtliche Frage und zwar ich hatte heute einen"
+      },
+      {
+        "start": 6.68,
+        "end": 12.6,
+        "text": "Aufverunfer und mitm Steinen gehend gerne beraten lassen. Deswegen bräuchte ich einen Rückruf von"
+      },
+      {
+        "start": 12.6,
+        "end": 21.56,
+        "text": "ihn entweder über die Telefonnummer plus für 9, 1, 6, 3, 9, 9, 5, 6, 7, 8, 9, 0 oder sie schreiben"
+      },
+      {
+        "start": 21.56,
+        "end": 29.72,
+        "text": "meine E-Mail an Carlos.Gasja.et. hotmail.es. Ich danke Ihnen, schönen Tag noch."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 3.44,
+    "call_id": "call_20"
+  },
+  {
+    "text": "Guten Tag und zwar ist mein Name Anna Kovalski und ich habe eine rechtliche Frage bezüglich eines Auferunfalls. Es wäre richtig gut, wenn sie sich schnellstmöglich bei mir zurückmelden würden. Das ginge entweder per e-mail unter ana.kovalski.gmail.com oder sie rufen mich direkt an. Das wäre plus 4 9 1 7 7 1 1 6 7 8 9 0 1. Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.84,
+        "text": "Guten Tag und zwar ist mein Name Anna Kovalski und ich habe eine rechtliche Frage bezüglich eines"
+      },
+      {
+        "start": 6.84,
+        "end": 11.64,
+        "text": "Auferunfalls. Es wäre richtig gut, wenn sie sich schnellstmöglich bei mir zurückmelden würden."
+      },
+      {
+        "start": 11.64,
+        "end": 18.36,
+        "text": "Das ginge entweder per e-mail unter ana.kovalski.gmail.com oder sie rufen mich direkt an."
+      },
+      {
+        "start": 18.36,
+        "end": 25.16,
+        "text": "Das wäre plus 4 9 1 7 7 1 1 6 7 8 9 0 1. Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 2.21,
+    "call_id": "call_21"
+  },
+  {
+    "text": "Guten Tag, mein Name ist Lukas Silva und ich habe eine rechtliche Frage und zwar geht es um eine Kündigung von meinem Arbeitgeber. Es wäre gut, wenn Sie sich schnellstmöglich bei mir zurückmelden würden. Das ginge entweder über die E-Mail-Adresse l u c a s .s e l v a at u o l .com .br oder sie ruf mich an. Das wäre dann die plus 4 9 1 5 9 2 2 7 8 9 0 1 2. Danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 7.28,
+        "text": "Guten Tag, mein Name ist Lukas Silva und ich habe eine rechtliche Frage und zwar geht es um eine"
+      },
+      {
+        "start": 7.28,
+        "end": 12.32,
+        "text": "Kündigung von meinem Arbeitgeber. Es wäre gut, wenn Sie sich schnellstmöglich bei mir zurückmelden"
+      },
+      {
+        "start": 12.32,
+        "end": 25.22,
+        "text": "würden. Das ginge entweder über die E-Mail-Adresse l u c a s .s e l v a at u o l .com .br oder sie"
+      },
+      {
+        "start": 25.22,
+        "end": 32.82,
+        "text": "ruf mich an. Das wäre dann die plus 4 9 1 5 9 2 2 7 8 9 0 1 2. Danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 3.33,
+    "call_id": "call_22"
+  },
+  {
+    "text": "Guten Tag, mein Name ist Emma Anderson und ich habe eine rechtliche Frage. Es wäre richtig gut, wenn Sie sich schnellstmöglich bei mir melden könnten, dann würde ich mit einem Anwalt näher darüber sprechen. Meine E-Mail-Adresse ist Emma. Anderson, ergmail.com oder sie rufen mich direkt an, das wäre plus 4.9. 174. 3.3.89.0123. Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 8.28,
+        "text": "Guten Tag, mein Name ist Emma Anderson und ich habe eine rechtliche Frage. Es wäre richtig gut,"
+      },
+      {
+        "start": 8.28,
+        "end": 12.08,
+        "text": "wenn Sie sich schnellstmöglich bei mir melden könnten, dann würde ich mit einem Anwalt näher darüber"
+      },
+      {
+        "start": 12.08,
+        "end": 19.2,
+        "text": "sprechen. Meine E-Mail-Adresse ist Emma. Anderson, ergmail.com oder sie rufen mich direkt an, das wäre"
+      },
+      {
+        "start": 19.2,
+        "end": 25.4,
+        "text": "plus 4.9. 174. 3.3.89.0123. Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 2.89,
+    "call_id": "call_23"
+  },
+  {
+    "text": "Guten Tag, mein Name ist David Schenn und ich habe eine rechtliche Frage. Es geht um eine Nachbarschaftsstreitigkeit und ich bräuchte schnellstmögliche rechtliche Beratung. Und zwar ginge das am leichtesten per E-Mail unter davd.co.co. at Outlook.com oder sie rufen mich an. Das wäre dann die plus 4 9 1 6 2 4 4 9 0 1 2 3 4. Danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.44,
+        "text": "Guten Tag, mein Name ist David Schenn und ich habe eine rechtliche Frage."
+      },
+      {
+        "start": 5.44,
+        "end": 8.44,
+        "text": "Es geht um eine Nachbarschaftsstreitigkeit und ich bräuchte schnellstmögliche"
+      },
+      {
+        "start": 8.44,
+        "end": 14.32,
+        "text": "rechtliche Beratung. Und zwar ginge das am leichtesten per E-Mail unter"
+      },
+      {
+        "start": 14.32,
+        "end": 27.6,
+        "text": "davd.co.co. at Outlook.com oder sie rufen mich an. Das wäre dann die plus 4 9 1 6 2 4 4 9 0 1 2 3 4."
+      },
+      {
+        "start": 27.6,
+        "end": 29.6,
+        "text": "Danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 3.1,
+    "call_id": "call_24"
+  },
+  {
+    "text": "Guten Tag und zwar habe ich ein richtiges Anliegen. Mein Name ist Marie Lefavre und ich würde mich sehr freuen, wenn Sie mich schnellstmöglich zurückrufen worden. Das ginge am besten unter der Plus 4 9 1 7 6 5 5 0 1 2 3 4 5 oder Sie schreiben meine E-Mail. Das wäre Marie. Lefavre.et. Yahoo.fr. Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 8.120000000000001,
+        "text": "Guten Tag und zwar habe ich ein richtiges Anliegen. Mein Name ist Marie Lefavre und ich"
+      },
+      {
+        "start": 8.120000000000001,
+        "end": 11.200000000000001,
+        "text": "würde mich sehr freuen, wenn Sie mich schnellstmöglich zurückrufen worden. Das"
+      },
+      {
+        "start": 11.200000000000001,
+        "end": 18.04,
+        "text": "ginge am besten unter der Plus 4 9 1 7 6 5 5 0 1 2 3 4 5 oder Sie schreiben"
+      },
+      {
+        "start": 18.04,
+        "end": 25.240000000000002,
+        "text": "meine E-Mail. Das wäre Marie. Lefavre.et. Yahoo.fr. Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 1.9,
+    "call_id": "call_25"
+  },
+  {
+    "text": "Guten Tag, mein Name ist Arme Tassan und ich habe eine rechtliche Frage bezüglich einer Nachbarschaftsstreitigkeit. Daher würde ich mich um den schnellen Rückruf freuen. Meine Telefonnummer ist plus 4.9151 6.6123456 oder Sie schreiben meine E-Mail. Das wäre dann ahmide.hassaen et gmail.com. Ich danke Ihnen. Schöntag noch.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.8,
+        "text": "Guten Tag, mein Name ist Arme Tassan und ich habe eine rechtliche Frage bezüglich einer"
+      },
+      {
+        "start": 5.8,
+        "end": 10.5,
+        "text": "Nachbarschaftsstreitigkeit. Daher würde ich mich um den schnellen Rückruf freuen."
+      },
+      {
+        "start": 10.5,
+        "end": 19.1,
+        "text": "Meine Telefonnummer ist plus 4.9151 6.6123456 oder Sie schreiben meine E-Mail."
+      },
+      {
+        "start": 19.1,
+        "end": 28.0,
+        "text": "Das wäre dann ahmide.hassaen et gmail.com. Ich danke Ihnen."
+      },
+      {
+        "start": 28.0,
+        "end": 29.0,
+        "text": "Schöntag noch."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 2.96,
+    "call_id": "call_26"
+  },
+  {
+    "text": "Guten Tag, mein Name ist Olivia Smith und ich habe eine rechtliche Frage bezüglich einer Königung die Mädge zugeschickt wurde und würde mich freuen, wenn Sie sich schnellstmöglich bei mir melden. Das ginge entweder per E-Mail-Adresse über olivier.smithet-iCloud.com oder Sie rufen mich anders wäre plus 4.917377234567. Ich danke Ihnen, schönen Tag noch.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.4,
+        "text": "Guten Tag, mein Name ist Olivia Smith und ich habe eine rechtliche Frage bezüglich einer"
+      },
+      {
+        "start": 6.4,
+        "end": 11.66,
+        "text": "Königung die Mädge zugeschickt wurde und würde mich freuen, wenn Sie sich schnellstmöglich"
+      },
+      {
+        "start": 11.66,
+        "end": 12.66,
+        "text": "bei mir melden."
+      },
+      {
+        "start": 12.66,
+        "end": 21.96,
+        "text": "Das ginge entweder per E-Mail-Adresse über olivier.smithet-iCloud.com oder Sie rufen mich"
+      },
+      {
+        "start": 21.96,
+        "end": 27.84,
+        "text": "anders wäre plus 4.917377234567."
+      },
+      {
+        "start": 27.84,
+        "end": 29.48,
+        "text": "Ich danke Ihnen, schönen Tag noch."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 3.0,
+    "call_id": "call_27"
+  },
+  {
+    "text": "Guten Tag. Hier spricht Juki Tanaka und ich hab eine rechtliche Frage, es geht um eine Aufhauptumfall und ich würde mich über schnellstmögliche Rückmeldung freuen. Das ginge entweder per e-mail über yukai.tanaka.at gmail.com oder sie rufe mich an unter plus 4 9 1 7 9 8 8 3 4 5 6 7 8. Ich danke Ihnen. Schönen Tag noch.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 8.52,
+        "text": "Guten Tag. Hier spricht Juki Tanaka und ich hab eine rechtliche Frage, es geht um eine"
+      },
+      {
+        "start": 8.52,
+        "end": 13.84,
+        "text": "Aufhauptumfall und ich würde mich über schnellstmögliche Rückmeldung freuen. Das"
+      },
+      {
+        "start": 13.84,
+        "end": 26.28,
+        "text": "ginge entweder per e-mail über yukai.tanaka.at gmail.com oder sie rufe mich an unter plus 4 9"
+      },
+      {
+        "start": 26.28,
+        "end": 31.880000000000003,
+        "text": "1 7 9 8 8 3 4 5 6 7 8. Ich danke Ihnen. Schönen Tag noch."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 9.62,
+    "call_id": "call_28"
+  },
+  {
+    "text": "Guten Tag, mein Name ist Isabella Martinez und ich hab eine rechtliche Frage. Ich würde das gerne vor einem Anwalt weiter ausführen. Am besten sie melden sich per emailadresson, das wäre Isabella.machtines.adgmail.com oder sie rufen mich an über plus 4.915799456789. Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 7.4,
+        "text": "Guten Tag, mein Name ist Isabella Martinez und ich hab eine rechtliche Frage. Ich"
+      },
+      {
+        "start": 7.4,
+        "end": 11.16,
+        "text": "würde das gerne vor einem Anwalt weiter ausführen. Am besten sie melden sich per"
+      },
+      {
+        "start": 11.16,
+        "end": 20.84,
+        "text": "emailadresson, das wäre Isabella.machtines.adgmail.com oder sie rufen mich an über"
+      },
+      {
+        "start": 20.84,
+        "end": 26.64,
+        "text": "plus 4.915799456789. Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 2.7,
+    "call_id": "call_29"
+  },
+  {
+    "text": "Guten Tag, mein Name ist Leihem O'Brien und ich habe eine rechtliche Frage bezüglichke einer Nachbarschaftsstreitigkeit zu der ich schnellstmöglich rechtliche Beratung bräuchte. Sie könnten sich bei mir melden über meine E-Mail-Adresse, die wäre L-I-A-M, Punkt O-B-R-I-E-N, mit gmail.com oder sie rufen mich an unter plus 4 9 1 6 9 0 0 5 6 7 8 9 0. Ich danke Ihnen.",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.0600000000000005,
+        "text": "Guten Tag, mein Name ist Leihem O'Brien und ich habe eine rechtliche Frage bezüglichke"
+      },
+      {
+        "start": 5.0600000000000005,
+        "end": 10.64,
+        "text": "einer Nachbarschaftsstreitigkeit zu der ich schnellstmöglich rechtliche Beratung bräuchte."
+      },
+      {
+        "start": 10.64,
+        "end": 20.28,
+        "text": "Sie könnten sich bei mir melden über meine E-Mail-Adresse, die wäre L-I-A-M, Punkt O-B-R-I-E-N,"
+      },
+      {
+        "start": 20.28,
+        "end": 28.840000000000003,
+        "text": "mit gmail.com oder sie rufen mich an unter plus 4 9 1 6 9 0 0 5 6 7 8 9 0. Ich danke Ihnen."
+      }
+    ],
+    "language": "de",
+    "model": "base",
+    "processing_time": 3.14,
+    "call_id": "call_30"
+  }
+]

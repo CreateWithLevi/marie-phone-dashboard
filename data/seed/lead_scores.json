@@ -1,0 +1,757 @@
+[
+  {
+    "lead_score": 45,
+    "lead_score_reasoning": "The lead has complete contact information, but the case type is too general ('General Inquiry') and lacks specific details. Urgency is low (1 out of potentially higher scale) and there is insufficient information to determine if the firm can assist or take action.",
+    "resolution_gaps": [
+      "The general nature of the legal question is not specified.",
+      "It is unknown if the caller has attempted to resolve this themselves.",
+      "The time-sensitive element of the issue is not clear.",
+      "Case type is too vague and needs further clarification for proper routing."
+    ],
+    "playbook_completeness": 0.33,
+    "playbook_answered": [],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Has the caller attempted to resolve this themselves?",
+      "Is there a time-sensitive element?"
+    ],
+    "recommended_actions": [
+      "Contact the lead to clarify the nature of the legal question.",
+      "Inquire about any deadlines or time-sensitive aspects of the case.",
+      "Ask if the caller has taken any steps to resolve the issue themselves.",
+      "Determine the specific area of law if possible."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_01"
+  },
+  {
+    "lead_score": 55,
+    "lead_score_reasoning": "The lead has complete contact information and a clear intent to speak with an attorney. However, the case type is very general ('General Inquiry') and lacks specific details, which limits the immediate actionability. The urgency is also low.",
+    "resolution_gaps": [
+      "Specific nature of the legal question",
+      "Details regarding any attempts at self-resolution",
+      "Information about time-sensitive elements"
+    ],
+    "playbook_completeness": 0.33,
+    "playbook_answered": [],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Has the caller attempted to resolve this themselves?",
+      "Is there a time-sensitive element?"
+    ],
+    "recommended_actions": [
+      "Contact the lead to gather more specific details about their legal question.",
+      "Determine the nature of the legal issue and assess if it aligns with the firm's practice areas.",
+      "Inquire about any deadlines or time constraints related to the legal matter."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_02"
+  },
+  {
+    "lead_score": 65,
+    "lead_score_reasoning": "The lead provides complete contact information and a clear intent to seek legal counsel. However, the 'case_type' is too general ('General Inquiry'), and the 'key_facts' do not provide specific details about the legal question, making it difficult to assess urgency or determine the appropriate practice area.",
+    "resolution_gaps": [
+      "Specifics of the legal question are missing.",
+      "Urgency of the legal matter is not established beyond a general note of needing to reach someone."
+    ],
+    "playbook_completeness": 0.33,
+    "playbook_answered": [
+      "Has the caller attempted to resolve this themselves?"
+    ],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Is there a time-sensitive element?"
+    ],
+    "recommended_actions": [
+      "Callback to gather more specific details about the legal question.",
+      "Attempt to categorize the 'General Inquiry' into a specific practice area.",
+      "Assess the urgency of the matter during the callback."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_03"
+  },
+  {
+    "lead_score": 85,
+    "lead_score_reasoning": "The lead is of high quality due to complete contact information, a clearly defined case type (Employment Law - termination), and a clear indication of urgency as the termination occurred two days ago. The caller explicitly states they believe the termination was unlawful and wants to speak with a lawyer, indicating readiness for legal action.",
+    "resolution_gaps": [
+      "A specific deadline for legal action (statute of limitations) was not mentioned.",
+      "Whether relevant documents like a termination letter or employment contract exist was not explicitly confirmed."
+    ],
+    "playbook_completeness": 0.6,
+    "playbook_answered": [
+      "What is the employment issue? (termination, discrimination, wage dispute, etc.)",
+      "Is the caller the employee or employer?",
+      "Has the employment relationship ended?"
+    ],
+    "playbook_unanswered": [
+      "Is there a deadline for legal action?",
+      "Are there relevant documents (contract, termination letter)?"
+    ],
+    "recommended_actions": [
+      "Contact Matthias Hoffmann to schedule a consultation.",
+      "During the consultation, inquire about any deadlines for legal action and request copies of the termination letter and employment contract.",
+      "Assess the lawfulness of the termination based on the details provided and documentation."
+    ],
+    "priority_level": "high",
+    "call_id": "call_04"
+  },
+  {
+    "lead_score": 50,
+    "lead_score_reasoning": "The lead provides complete contact information and has a case type, but the specific legal issue is vague (General Inquiry) and lacks urgency, limiting the firm's ability to assess and act effectively without further information. The confidence score for case type is also low.",
+    "resolution_gaps": [
+      "Specific nature of the legal question is unclear.",
+      "Lack of urgency indicators."
+    ],
+    "playbook_completeness": 0.33,
+    "playbook_answered": [
+      "Is there a time-sensitive element?"
+    ],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Has the caller attempted to resolve this themselves?"
+    ],
+    "recommended_actions": [
+      "Contact the lead to clarify the nature of the legal question.",
+      "Inquire about any self-resolution attempts and time-sensitive elements.",
+      "Categorize the case type more specifically if possible during follow-up."
+    ],
+    "priority_level": "low",
+    "call_id": "call_05"
+  },
+  {
+    "lead_score": 75,
+    "lead_score_reasoning": "The lead has complete contact information and a clear case type (Employment Law). The urgency is moderate (level 3), and the core issue (termination notice) is stated. However, some key details are missing for immediate action.",
+    "resolution_gaps": [
+      "Is the caller the employee or employer?",
+      "Is there a deadline for legal action?",
+      "Has the employment relationship ended?",
+      "Are there relevant documents (contract, termination letter)?"
+    ],
+    "playbook_completeness": 0.4,
+    "playbook_answered": [
+      "What is the employment issue? (termination, discrimination, wage dispute, etc.)"
+    ],
+    "playbook_unanswered": [
+      "Is the caller the employee or employer?",
+      "Is there a deadline for legal action?",
+      "Has the employment relationship ended?",
+      "Are there relevant documents (contract, termination letter)?"
+    ],
+    "recommended_actions": [
+      "Contact the caller to gather more details regarding the playbook questions.",
+      "Advise the caller to gather any relevant documents, such as the termination letter and employment contract.",
+      "Schedule a consultation once more information is available."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_06"
+  },
+  {
+    "lead_score": 45,
+    "lead_score_reasoning": "The lead has complete contact information, but the case type is very vague ('General Inquiry') and the specific legal issue ('Aufbau und fall') is unclear. Urgency is also low (1). Insufficient information for the firm to take immediate action.",
+    "resolution_gaps": [
+      "Clarification of 'Aufbau und fall' as a legal issue.",
+      "Understanding the specific legal question being asked."
+    ],
+    "playbook_completeness": 0.33,
+    "playbook_answered": [
+      "Is there a time-sensitive element?"
+    ],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Has the caller attempted to resolve this themselves?"
+    ],
+    "recommended_actions": [
+      "Follow up with the caller to clarify the specific legal issue related to 'Aufbau und fall'.",
+      "Ask follow-up questions to understand the nature of the legal question.",
+      "Determine if the caller has attempted self-resolution."
+    ],
+    "priority_level": "low",
+    "call_id": "call_07"
+  },
+  {
+    "lead_score": 50,
+    "lead_score_reasoning": "The lead has a clear case type and contact information, but lacks detail regarding the specific family law issue and urgency. The provided email and phone number also appear to have spelling/digit errors, requiring verification.",
+    "resolution_gaps": [
+      "Clarification of the specific family law issue (e.g., divorce, custody).",
+      "Confirmation of children's involvement.",
+      "Information on existing court orders.",
+      "Assessment of any urgent deadlines or safety concerns.",
+      "Confirmation of whether another attorney has been retained.",
+      "Verification of the provided email and phone number due to potential transcription errors."
+    ],
+    "playbook_completeness": 0.2,
+    "playbook_answered": [
+      "Are there children involved?"
+    ],
+    "playbook_unanswered": [
+      "What specific family law issue? (divorce, custody, adoption, etc.)",
+      "Is there an existing court order?",
+      "Is there an urgent deadline or safety concern?",
+      "Has the caller already retained another attorney?"
+    ],
+    "recommended_actions": [
+      "Attempt to call Thomas Neumann back at the provided number, confirming contact details.",
+      "If unable to reach, send an email to the provided address to confirm details and schedule a consultation.",
+      "Prepare to ask detailed questions about child support and other relevant family law matters during the callback."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_08"
+  },
+  {
+    "lead_score": 55,
+    "lead_score_reasoning": "The lead has complete contact information and a stated need for legal advice. However, the case type is very general ('General Inquiry') and the urgency is low, making it difficult to assess the potential value or immediate need for the firm. Key details about the nature of the legal question are missing.",
+    "resolution_gaps": [
+      "The specific nature of the 'general legal question' is not detailed.",
+      "Whether the caller has attempted to resolve the issue themselves is unknown.",
+      "The existence of any time-sensitive elements or deadlines is unclear."
+    ],
+    "playbook_completeness": 0.33,
+    "playbook_answered": [
+      "Is there a time-sensitive element?"
+    ],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Has the caller attempted to resolve this themselves?"
+    ],
+    "recommended_actions": [
+      "Contact the lead to clarify the specific legal issue.",
+      "Inquire about any deadlines or time-sensitive aspects of the case.",
+      "Ask if the caller has already taken steps to resolve the issue.",
+      "Determine if this general inquiry falls within the firm's practice areas."
+    ],
+    "priority_level": "low",
+    "call_id": "call_09"
+  },
+  {
+    "lead_score": 45,
+    "lead_score_reasoning": "The lead has complete contact information and a identified, but the specific legal issue is unclear ('General Inquiry') and the urgency is low (urgency score of 1). There is not enough information to determine if the firm can assist or how to proceed.",
+    "resolution_gaps": [
+      "The specific nature of the legal question needs to be clarified.",
+      "It is unclear if there is a time-sensitive element to the caller's legal question."
+    ],
+    "playbook_completeness": 0.33,
+    "playbook_answered": [
+      "Is there a time-sensitive element?"
+    ],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Has the caller attempted to resolve this themselves?"
+    ],
+    "recommended_actions": [
+      "Contact the lead to clarify the specific legal issue.",
+      "Inquire about any time-sensitive aspects or deadlines.",
+      "Ask if the caller has attempted to resolve the issue themselves."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_10"
+  },
+  {
+    "lead_score": 70,
+    "lead_score_reasoning": "Good lead with complete contact information and a clearly identified case type. Urgency is moderate, and some key details from the playbook are missing.",
+    "resolution_gaps": [
+      "Specific nature of the neighborhood dispute (e.g., noise, property line, etc.).",
+      "Status of any active lease.",
+      "Whether any formal notice has been given.",
+      "Existence of any court deadlines."
+    ],
+    "playbook_completeness": 0.2,
+    "playbook_answered": [
+      "Is the caller a landlord or tenant?"
+    ],
+    "playbook_unanswered": [
+      "What is the dispute about? (rent, repairs, eviction, deposit, etc.)",
+      "Is there an active lease?",
+      "Has notice been given?",
+      "Is there a court deadline?"
+    ],
+    "recommended_actions": [
+      "Contact the client to gather more specific details about the neighborhood dispute.",
+      "Inquire about the existence of a lease agreement.",
+      "Ask if any formal notices have been exchanged.",
+      "Determine if there are any upcoming court dates or deadlines."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_11"
+  },
+  {
+    "lead_score": 50,
+    "lead_score_reasoning": "The lead has complete contact information and a stated desire to speak with an attorney. However, the case type is 'General Inquiry,' and critical details about the legal question and any time sensitivity are missing, making it difficult to assess urgency or prepare for a consultation.",
+    "resolution_gaps": [
+      "Specific details about the legal question",
+      "Information regarding time-sensitive elements or deadlines",
+      "Whether the caller has attempted to resolve the issue themselves"
+    ],
+    "playbook_completeness": 0.33,
+    "playbook_answered": [
+      "Is there a time-sensitive element?"
+    ],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Has the caller attempted to resolve this themselves?"
+    ],
+    "recommended_actions": [
+      "Schedule a brief follow-up call with Michael Wagner to clarify the nature of his legal question.",
+      "During the follow-up, inquire about any deadlines or time constraints related to his legal issue.",
+      "Ask if he has already taken any steps to address the legal matter."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_12"
+  },
+  {
+    "lead_score": 70,
+    "lead_score_reasoning": "The lead is good quality with complete contact information and a clear intent to speak with a lawyer. However, the case type is too general ('General Inquiry') and the urgency is low, preventing a more definitive assessment or immediate action without further information.",
+    "resolution_gaps": [
+      "The specific nature of the legal issue is not clearly defined beyond 'General Inquiry'.",
+      "The urgency is rated low, and no specific time-sensitive elements were mentioned.",
+      "Caller's attempt at self-resolution was not explored."
+    ],
+    "playbook_completeness": 0.33,
+    "playbook_answered": [
+      "Is there a time-sensitive element?"
+    ],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Has the caller attempted to resolve this themselves?"
+    ],
+    "recommended_actions": [
+      "Follow up with the caller to clarify the specific legal issue.",
+      "Inquire about any deadlines or time-sensitive aspects of the case.",
+      "Ask if the caller has already tried to resolve the issue themselves.",
+      "Schedule a consultation if the clarified issue falls within the firm's practice areas."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_13"
+  },
+  {
+    "lead_score": 65,
+    "lead_score_reasoning": "The lead has clear contact information and a well-defined case type (termination), but lacks critical details required for employment law evaluation, such as timelines, document status, and the specific nature of the termination.",
+    "resolution_gaps": [
+      "Missing deadline information (e.g., Kündigungsschutzklage deadline)",
+      "Missing confirmation of whether the termination letter has been physically received",
+      "No clarification if the caller has any relevant contracts or documents ready for review"
+    ],
+    "playbook_completeness": 0.2,
+    "playbook_answered": [
+      "What is the employment issue? (termination)"
+    ],
+    "playbook_unanswered": [
+      "Is the caller the employee or employer?",
+      "Is there a deadline for legal action?",
+      "Has the employment relationship ended?",
+      "Are there relevant documents (contract, termination letter)?"
+    ],
+    "recommended_actions": [
+      "Schedule a consultation as soon as possible due to strict German labor law deadlines for termination claims.",
+      "Email the client requesting a copy of the termination notice prior to the call.",
+      "Verify the exact date of receipt of the termination letter during the follow-up."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_14"
+  },
+  {
+    "lead_score": 75,
+    "lead_score_reasoning": "Good lead quality. Contact information is complete and the case type is clear (Employment Law). The urgency is moderate (3/5), and the key facts indicate a clear need for legal advice regarding termination. However, there are some gaps in specific details that could improve resolution readiness.",
+    "resolution_gaps": [
+      "Caller did not specify if there is a deadline for legal action.",
+      "Caller did not confirm if the employment relationship has ended.",
+      "Caller did not mention the availability of relevant documents like a termination letter or contract."
+    ],
+    "playbook_completeness": 0.6,
+    "playbook_answered": [
+      "What is the employment issue? (termination, discrimination, wage dispute, etc.)",
+      "Is the caller the employee or employer?"
+    ],
+    "playbook_unanswered": [
+      "Is there a deadline for legal action?",
+      "Has the employment relationship ended?",
+      "Are there relevant documents (contract, termination letter)?"
+    ],
+    "recommended_actions": [
+      "Schedule a callback to the client to gather more details regarding the termination, potential deadlines, and supporting documents.",
+      "Review firm's employment law intake checklist and ensure all critical questions are asked during the follow-up call."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_15"
+  },
+  {
+    "lead_score": 50,
+    "lead_score_reasoning": "The lead has complete contact information but the case type is too general ('General Inquiry') and lacks specific details, making it difficult to assess the urgency or relevance to the firm. The urgency score is also low.",
+    "resolution_gaps": [
+      "Specific nature of the legal question is not detailed.",
+      "Whether the caller attempted to resolve the issue themselves is unknown.",
+      "No specific time-sensitive element was identified beyond the general desire for a callback."
+    ],
+    "playbook_completeness": 0.33,
+    "playbook_answered": [
+      "Is there a time-sensitive element?"
+    ],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Has the caller attempted to resolve this themselves?"
+    ],
+    "recommended_actions": [
+      "Contact the caller to clarify the specific legal issue.",
+      "Determine if the issue falls within the firm's practice areas.",
+      "Assess the urgency based on the clarified legal issue."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_16"
+  },
+  {
+    "lead_score": 65,
+    "lead_score_reasoning": "The lead is good quality, with complete contact information and a clear general inquiry. However, the specific legal question and urgency are not detailed, limiting immediate actionability.",
+    "resolution_gaps": [
+      "The specific nature of the legal question was not detailed.",
+      "The urgency or time-sensitive elements of the legal question were not explored."
+    ],
+    "playbook_completeness": 0.33,
+    "playbook_answered": [
+      "Is there a time-sensitive element?"
+    ],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Has the caller attempted to resolve this themselves?"
+    ],
+    "recommended_actions": [
+      "Contact Sophie Dubois via email to gather more details about the general legal question.",
+      "Inquire about any deadlines or time-sensitive aspects of her legal issue.",
+      "Ask if she has already taken steps to resolve the matter herself."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_17"
+  },
+  {
+    "lead_score": 50,
+    "lead_score_reasoning": "The lead provides complete contact information, but the case type is too general ('General Inquiry') and lacks specific details, making it difficult to assess the nature of the legal issue or its urgency. The low confidence score for 'case_type' further supports this.",
+    "resolution_gaps": [
+      "The specific legal issue the caller needs assistance with is not identified."
+    ],
+    "playbook_completeness": 0.33,
+    "playbook_answered": [],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Has the caller attempted to resolve this themselves?",
+      "Is there a time-sensitive element?"
+    ],
+    "recommended_actions": [
+      "Contact the lead to clarify the specific legal issue.",
+      "Probe for details regarding urgency and any prior attempts at resolution.",
+      "Categorize the case type more precisely based on the follow-up conversation."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_18"
+  },
+  {
+    "lead_score": 70,
+    "lead_score_reasoning": "Good quality lead with complete contact information and a clear case type. Urgency is moderate, and there are some gaps in understanding the specifics of the neighborhood dispute and potential legal deadlines.",
+    "resolution_gaps": [
+      "Specifics of the neighborhood dispute are unclear (e.g., noise, property lines, etc.).",
+      "Whether there is an active lease or notice given is unknown.",
+      "If there is a court deadline is unknown."
+    ],
+    "playbook_completeness": 0.4,
+    "playbook_answered": [
+      "Is the caller a landlord or tenant?"
+    ],
+    "playbook_unanswered": [
+      "What is the dispute about? (rent, repairs, eviction, deposit, etc.)",
+      "Is there an active lease?",
+      "Has notice been given?",
+      "Is there a court deadline?"
+    ],
+    "recommended_actions": [
+      "Follow up with Emily Johnson via callback or email.",
+      "Gather more specific details about the neighborhood dispute during the follow-up.",
+      "Inquire about the existence of a lease, any notices given, and potential court deadlines."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_19"
+  },
+  {
+    "lead_score": 70,
+    "lead_score_reasoning": "The lead provides complete contact information and a clear case type. The urgency is moderate (accident today), but several key details required by the playbook are missing, preventing immediate assessment and action.",
+    "resolution_gaps": [
+      "Caller did not specify the type of traffic incident beyond 'accident'.",
+      "The exact time the accident occurred was not specified.",
+      "It is unknown if a fine or penalty has been issued.",
+      "It is unknown if a court date is scheduled.",
+      "It is unknown if anyone was injured in the accident."
+    ],
+    "playbook_completeness": 0.4,
+    "playbook_answered": [
+      "When did the incident occur?"
+    ],
+    "playbook_unanswered": [
+      "What type of traffic incident? (speeding, accident, DUI, etc.)",
+      "Has a fine or penalty been issued?",
+      "Is there a court date scheduled?",
+      "Was anyone injured?"
+    ],
+    "recommended_actions": [
+      "Contact the lead to gather additional details requested by the playbook.",
+      "Schedule a consultation to discuss the accident and potential legal strategy."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_20"
+  },
+  {
+    "lead_score": 75,
+    "lead_score_reasoning": "The lead has complete contact information and a clearly identified case type (Traffic Law). The urgency is moderate (4/5), and the caller requested a quick callback. However, crucial details regarding the incident itself are missing, preventing immediate assessment or action.",
+    "resolution_gaps": [
+      "Details of the traffic incident (type, date, injuries, fines, court dates) are missing.",
+      "No information provided about potential injuries or if a fine/penalty has been issued."
+    ],
+    "playbook_completeness": 0.4,
+    "playbook_answered": [
+      "Caller's name is Anna Kovalski.",
+      "Caller has a legal question regarding a traffic accident."
+    ],
+    "playbook_unanswered": [
+      "What type of traffic incident? (speeding, accident, DUI, etc.)",
+      "When did the incident occur?",
+      "Has a fine or penalty been issued?",
+      "Is there a court date scheduled?",
+      "Was anyone injured?"
+    ],
+    "recommended_actions": [
+      "Contact the lead immediately to gather more details about the traffic incident.",
+      "Schedule a consultation once sufficient information is obtained.",
+      "Prioritize callback due to stated urgency."
+    ],
+    "priority_level": "high",
+    "call_id": "call_21"
+  },
+  {
+    "lead_score": 75,
+    "lead_score_reasoning": "The lead has complete contact information and a clear case type (Employment Law). The urgency is moderate (4/5), and the caller wants a quick callback. However, several key details from the playbook are missing, which prevents immediate action without further investigation.",
+    "resolution_gaps": [
+      "Specific nature of the employment issue (beyond just termination notice).",
+      "Whether the caller is the employee or employer.",
+      "Existence of any deadlines for legal action.",
+      "Confirmation if the employment relationship has ended.",
+      "Availability of relevant documents like a contract or termination letter."
+    ],
+    "playbook_completeness": 0.4,
+    "playbook_answered": [
+      "What is the employment issue? (termination, discrimination, wage dispute, etc.)"
+    ],
+    "playbook_unanswered": [
+      "Is the caller the employee or employer?",
+      "Is there a deadline for legal action?",
+      "Has the employment relationship ended?",
+      "Are there relevant documents (contract, termination letter)?"
+    ],
+    "recommended_actions": [
+      "Contact the lead (Lukas Silva) immediately to gather the missing playbook information.",
+      "Schedule a consultation once the necessary details are obtained.",
+      "Review any provided documents during the consultation."
+    ],
+    "priority_level": "high",
+    "call_id": "call_22"
+  },
+  {
+    "lead_score": 50,
+    "lead_score_reasoning": "The lead has complete contact information and expressed a desire for a prompt callback, indicating moderate urgency. However, the case type is 'General Inquiry' and the specific legal question is not detailed, leaving significant ambiguity for the firm.",
+    "resolution_gaps": [
+      "The specific nature of the legal question is not defined.",
+      "Whether the caller has attempted to resolve the issue themselves is unknown.",
+      "The presence of any time-sensitive elements is not mentioned."
+    ],
+    "playbook_completeness": 0.0,
+    "playbook_answered": [],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Has the caller attempted to resolve this themselves?",
+      "Is there a time-sensitive element?"
+    ],
+    "recommended_actions": [
+      "Attempt to gather more specific information about the legal issue during the callback.",
+      "Schedule a callback with the client as requested.",
+      "Flag this lead for follow-up due to the vague nature of the inquiry."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_23"
+  },
+  {
+    "lead_score": 65,
+    "lead_score_reasoning": "The caller provides complete contact information, a clear case type (Landlord-Tenant), and expresses high urgency for a neighbor dispute. However, critical details specific to the case and all playbook questions remain unanswered, limiting immediate resolution readiness. The foundation for a good lead is present, but significant information gathering is still required.",
+    "resolution_gaps": [
+      "Is the caller a landlord or tenant?",
+      "What is the specific nature of the neighbor dispute (e.g., rent, repairs, eviction, deposit, noise, property damage)?",
+      "Is there an active lease agreement involved?",
+      "Has any formal notice been given by either party?",
+      "Is there any court deadline or immediate legal action pending?"
+    ],
+    "playbook_completeness": 0.0,
+    "playbook_answered": [],
+    "playbook_unanswered": [
+      "Is the caller a landlord or tenant?",
+      "What is the dispute about? (rent, repairs, eviction, deposit, etc.)",
+      "Is there an active lease?",
+      "Has notice been given?",
+      "Is there a court deadline?"
+    ],
+    "recommended_actions": [
+      "Prioritize scheduling an initial consultation or follow-up call with David Schenn to gather the missing details.",
+      "During the follow-up, systematically address all unanswered playbook questions for Landlord-Tenant cases.",
+      "Determine the exact role of David Schenn (landlord or tenant) and the specific issues of the neighbor dispute.",
+      "Assess the urgency of any potential deadlines or legal actions based on the new information."
+    ],
+    "priority_level": "high",
+    "call_id": "call_24"
+  },
+  {
+    "lead_score": 45,
+    "lead_score_reasoning": "The lead provides solid contact information and establishes urgency, but the case type is vague ('General Inquiry') and none of the specific playbook questions were addressed, making it difficult to qualify the case before calling.",
+    "resolution_gaps": [
+      "Nature of legal question is undefined",
+      "Self-resolution efforts are unknown",
+      "Specific time-sensitive details (other than the request for a callback) are missing"
+    ],
+    "playbook_completeness": 0.0,
+    "playbook_answered": [],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Has the caller attempted to resolve this themselves?",
+      "Is there a time-sensitive element?"
+    ],
+    "recommended_actions": [
+      "Conduct an immediate callback to qualify the lead",
+      "Ask the three playbook questions during the initial screening",
+      "Determine if the inquiry falls under the firm's practice areas"
+    ],
+    "priority_level": "medium",
+    "call_id": "call_25"
+  },
+  {
+    "lead_score": 65,
+    "lead_score_reasoning": "The lead has complete and confirmed contact information (name, email, phone), which is excellent for follow-up. The general area of law (neighborhood dispute) is identified, providing a starting point. However, significant gaps exist regarding the specific details of the dispute, any previous resolution attempts, and concrete time-sensitive elements of the case, meaning a comprehensive intake will be required during the callback. The moderate urgency and request for a quick callback contribute to a good, but not high-quality, lead score.",
+    "resolution_gaps": [
+      "Specific details and context of the neighborhood dispute.",
+      "Information on any attempts made by the caller to resolve the issue directly.",
+      "Clarification on specific deadlines, court dates, or other critical time-sensitive elements related to the dispute.",
+      "The caller's desired outcome from legal intervention."
+    ],
+    "playbook_completeness": 0.33,
+    "playbook_answered": [
+      "What is the general nature of the legal question?"
+    ],
+    "playbook_unanswered": [
+      "Has the caller attempted to resolve this themselves?",
+      "Is there a time-sensitive element?"
+    ],
+    "recommended_actions": [
+      "Contact Arme Tassan promptly for a callback as requested.",
+      "Conduct a thorough intake to gather specific details of the neighborhood dispute.",
+      "Inquire about any prior attempts to resolve the issue.",
+      "Ascertain if there are any specific deadlines or time-sensitive elements relevant to the case.",
+      "Discuss the caller's expectations and desired outcomes."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_26"
+  },
+  {
+    "lead_score": 90,
+    "lead_score_reasoning": "This is a high-quality lead with a clear case type (Employment Law - termination), complete contact information, and an explicit urgent request for follow-up. While some detailed intake questions remain unanswered, the core issue is evident, allowing for immediate and targeted action.",
+    "resolution_gaps": [
+      "Deadline for legal action (crucial for termination cases)",
+      "Specifics of the termination (e.g., date of notice, effective termination date, stated reason)",
+      "Availability of employment contract details",
+      "Employer information (company name, size, location)"
+    ],
+    "playbook_completeness": 0.8,
+    "playbook_answered": [
+      "What is the employment issue? (termination, discrimination, wage dispute, etc.)",
+      "Is the caller the employee or employer?",
+      "Has the employment relationship ended?",
+      "Are there relevant documents (contract, termination letter)?"
+    ],
+    "playbook_unanswered": [
+      "Is there a deadline for legal action?"
+    ],
+    "recommended_actions": [
+      "Contact Olivia Smith as soon as possible via phone or email.",
+      "During follow-up, prioritize inquiring about any deadlines for legal action related to the termination notice (Kündigung).",
+      "Request copies of the termination notice and the employment contract.",
+      "Schedule an initial consultation to gather more details regarding the termination and provide initial advice."
+    ],
+    "priority_level": "high",
+    "call_id": "call_27"
+  },
+  {
+    "lead_score": 45,
+    "lead_score_reasoning": "Good contact information and a clear request for callback, but the case type is vague ('General Inquiry') and critical details about the accident and the specific legal question are missing. None of the key playbook questions were answered, indicating significant gaps in information required for assessment.",
+    "resolution_gaps": [
+      "Specific type of accident (e.g., car accident, slip and fall)",
+      "Details about the accident (date, location, injuries, parties involved, at-fault party)",
+      "The specific legal question or desired outcome from the firm",
+      "Whether the caller has attempted to resolve this themselves",
+      "Any time-sensitive elements or deadlines related to the accident or legal issue"
+    ],
+    "playbook_completeness": 0.0,
+    "playbook_answered": [],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Has the caller attempted to resolve this themselves?",
+      "Is there a time-sensitive element?"
+    ],
+    "recommended_actions": [
+      "Immediately follow up with Juki Tanaka to gather more specific case details.",
+      "Utilize the full playbook during the follow-up to ascertain the nature of the legal question, self-resolution attempts, and urgency.",
+      "Determine the specific practice area (e.g., personal injury, auto accident law) the case falls under based on new information."
+    ],
+    "priority_level": "medium",
+    "call_id": "call_28"
+  },
+  {
+    "lead_score": 35,
+    "lead_score_reasoning": "The lead provides complete and confident contact information. However, the case type is extremely vague ('General Inquiry'), and none of the crucial playbook questions were answered, indicating a significant lack of detail about the actual legal issue, urgency, or prior actions taken. This requires substantial follow-up to qualify.",
+    "resolution_gaps": [
+      "Specific nature of the legal question beyond 'General Inquiry'",
+      "Whether the caller has attempted to resolve the issue themselves",
+      "Any specific time-sensitive elements or deadlines associated with the legal matter"
+    ],
+    "playbook_completeness": 0.0,
+    "playbook_answered": [],
+    "playbook_unanswered": [
+      "What is the general nature of the legal question?",
+      "Has the caller attempted to resolve this themselves?",
+      "Is there a time-sensitive element?"
+    ],
+    "recommended_actions": [
+      "Contact Isabella Martinez via email (preferred method) or phone to gather specific details about her legal inquiry.",
+      "During follow-up, explicitly ask the unanswered playbook questions to determine the nature, urgency, and history of her legal issue.",
+      "Assess if the case aligns with the firm's practice areas once more information is obtained."
+    ],
+    "priority_level": "low",
+    "call_id": "call_29"
+  },
+  {
+    "lead_score": 45,
+    "lead_score_reasoning": "Caller provided complete contact information and indicated high urgency for legal advice. However, the specific details of the 'Landlord-Tenant' case are extremely vague, described only as a 'neighborhood dispute', and none of the playbook questions for this case type were addressed. This significantly reduces case clarity and readiness for action.",
+    "resolution_gaps": [
+      "Caller's specific role (landlord or tenant) is unknown.",
+      "The nature of the 'neighborhood dispute' in relation to landlord-tenant law is unclear (e.g., rent, repairs, eviction, noise, property damage, etc.).",
+      "Whether an active lease exists is unknown.",
+      "Whether formal notice has been given (by either party) is unknown.",
+      "Information regarding any existing court deadlines is missing."
+    ],
+    "playbook_completeness": 0.0,
+    "playbook_answered": [],
+    "playbook_unanswered": [
+      "Is the caller a landlord or tenant?",
+      "What is the dispute about? (rent, repairs, eviction, deposit, etc.)",
+      "Is there an active lease?",
+      "Has notice been given?",
+      "Is there a court deadline?"
+    ],
+    "recommended_actions": [
+      "Conduct an urgent follow-up call to clarify the specific details of the 'neighborhood dispute' and how it relates to a Landlord-Tenant situation.",
+      "Determine if the caller is a landlord or a tenant.",
+      "Address all unanswered playbook questions during the follow-up.",
+      "Verify if the case type 'Landlord-Tenant' is appropriate, or if it might fall under a different area of law (e.g., property law, nuisance)."
+    ],
+    "priority_level": "high",
+    "call_id": "call_30"
+  }
+]
