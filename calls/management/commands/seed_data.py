@@ -235,6 +235,9 @@ class Command(BaseCommand):
                 "lead_score_reasoning": scores.get("lead_score_reasoning", ""),
                 "resolution_gaps": scores.get("resolution_gaps", []),
                 "playbook_completeness": scores.get("playbook_completeness"),
+                "playbook_answered": scores.get("playbook_answered", []),
+                "playbook_unanswered": scores.get("playbook_unanswered", []),
+                "recommended_actions": scores.get("recommended_actions", []),
                 # Quality
                 "confidence_scores": analysis.get("confidence_scores", {}),
                 "needs_human_review": analysis.get("needs_human_review", False),

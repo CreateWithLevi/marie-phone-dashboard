@@ -67,7 +67,8 @@ class CallDetailSerializer(serializers.ModelSerializer):
             "caller_phone", "case_type", "case_type_name", "urgency",
             "key_facts", "summary", "resolution_status",
             "lead_score", "lead_score_reasoning", "resolution_gaps",
-            "playbook_completeness", "confidence_scores",
+            "playbook_completeness", "playbook_answered", "playbook_unanswered",
+            "recommended_actions", "confidence_scores",
             "needs_human_review", "extraction_accuracy",
             "transcript", "created_at",
         ]

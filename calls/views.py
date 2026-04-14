@@ -1,13 +1,14 @@
 from django.db.models import Avg, Count, Q
-from rest_framework import viewsets
-from rest_framework.decorators import api_view
+from rest_framework import status, viewsets
+from rest_framework.decorators import action, api_view
 from rest_framework.response import Response
 
-from .models import Call, CaseType, Playbook
+from .models import Call, CaseType, Playbook, PlaybookQuestion
 from .serializers import (
     CallDetailSerializer,
     CallListSerializer,
     CaseTypeSerializer,
+    PlaybookQuestionSerializer,
     PlaybookSerializer,
 )
 
@@ -75,6 +76,34 @@ class PlaybookViewSet(viewsets.ModelViewSet):
     """CRUD for playbooks with nested questions."""
     queryset = Playbook.objects.select_related("case_type").prefetch_related("questions").all()
     serializer_class = PlaybookSerializer
+
+    @action(detail=True, methods=["post"])
+    def add_question(self, request, pk=None):
+        """Add a question to a playbook."""
+        playbook = self.get_object()
+        text = request.data.get("text", "").strip()
+        if not text:
+            return Response({"error": "text is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        max_order = playbook.questions.count()
+        question = PlaybookQuestion.objects.create(
+            playbook=playbook,
+            text=text,
+            is_required=request.data.get("is_required", True),
+            order=max_order,
+        )
+        return Response(PlaybookQuestionSerializer(question).data, status=status.HTTP_201_CREATED)
+
+    @action(detail=True, methods=["delete"], url_path="remove_question/(?P<question_id>[0-9]+)")
+    def remove_question(self, request, pk=None, question_id=None):
+        """Remove a question from a playbook."""
+        playbook = self.get_object()
+        try:
+            question = playbook.questions.get(id=question_id)
+            question.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except PlaybookQuestion.DoesNotExist:
+            return Response({"error": "Question not found"}, status=status.HTTP_404_NOT_FOUND)
 
 
 @api_view(["GET"])

@@ -17,6 +17,12 @@ export default {
   getPlaybooks() {
     return api.get('/playbooks/')
   },
+  addPlaybookQuestion(playbookId, text) {
+    return api.post(`/playbooks/${playbookId}/add_question/`, { text })
+  },
+  removePlaybookQuestion(playbookId, questionId) {
+    return api.delete(`/playbooks/${playbookId}/remove_question/${questionId}/`)
+  },
   getEvaluation() {
     return api.get('/evaluation/')
   },

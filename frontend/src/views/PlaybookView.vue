@@ -5,6 +5,8 @@ import api from '../api'
 const playbooks = ref([])
 const loading = ref(true)
 const expandedId = ref(null)
+const newQuestion = ref('')
+const adding = ref(false)
 
 onMounted(async () => {
   try {
@@ -17,6 +19,30 @@ onMounted(async () => {
 
 function toggle(id) {
   expandedId.value = expandedId.value === id ? null : id
+  newQuestion.value = ''
+}
+
+async function addQuestion(playbook) {
+  const text = newQuestion.value.trim()
+  if (!text) return
+
+  adding.value = true
+  try {
+    const { data } = await api.addPlaybookQuestion(playbook.id, text)
+    playbook.questions.push(data)
+    newQuestion.value = ''
+  } finally {
+    adding.value = false
+  }
+}
+
+async function removeQuestion(playbook, questionId) {
+  try {
+    await api.removePlaybookQuestion(playbook.id, questionId)
+    playbook.questions = playbook.questions.filter(q => q.id !== questionId)
+  } catch (e) {
+    console.error('Failed to remove question:', e)
+  }
 }
 </script>
 
@@ -52,14 +78,41 @@ function toggle(id) {
         <div v-if="expandedId === pb.id" class="border-t px-4 py-3">
           <p class="text-sm text-gray-500 mb-3">{{ pb.description }}</p>
           <ol class="space-y-2">
-            <li v-for="q in pb.questions" :key="q.id" class="flex items-start gap-2 text-sm">
-              <span class="mt-0.5 w-4 h-4 rounded border flex items-center justify-center text-xs flex-shrink-0"
-                :class="q.is_required ? 'border-blue-400 text-blue-400' : 'border-gray-300 text-gray-300'">
-                {{ q.is_required ? '!' : '?' }}
-              </span>
-              <span class="text-gray-700">{{ q.text }}</span>
+            <li v-for="q in pb.questions" :key="q.id" class="flex items-center justify-between group text-sm">
+              <div class="flex items-start gap-2">
+                <span class="mt-0.5 w-4 h-4 rounded border flex items-center justify-center text-xs flex-shrink-0"
+                  :class="q.is_required ? 'border-blue-400 text-blue-400' : 'border-gray-300 text-gray-300'">
+                  {{ q.is_required ? '!' : '?' }}
+                </span>
+                <span class="text-gray-700">{{ q.text }}</span>
+              </div>
+              <button
+                @click.stop="removeQuestion(pb, q.id)"
+                class="text-gray-300 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity text-xs px-1"
+                title="Remove question"
+              >
+                x
+              </button>
             </li>
           </ol>
+
+          <!-- Add question -->
+          <div class="mt-4 pt-3 border-t flex gap-2">
+            <input
+              v-model="newQuestion"
+              type="text"
+              placeholder="Add a new intake question..."
+              class="flex-1 px-3 py-1.5 border rounded text-sm"
+              @keyup.enter="addQuestion(pb)"
+            />
+            <button
+              @click="addQuestion(pb)"
+              :disabled="!newQuestion.trim() || adding"
+              class="px-3 py-1.5 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 disabled:opacity-50"
+            >
+              Add
+            </button>
+          </div>
         </div>
       </div>
     </div>

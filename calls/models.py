@@ -96,6 +96,9 @@ class Call(models.Model):
     playbook_completeness = models.FloatField(
         null=True, blank=True, help_text="0.0 to 1.0"
     )
+    playbook_answered = models.JSONField(default=list, blank=True)
+    playbook_unanswered = models.JSONField(default=list, blank=True)
+    recommended_actions = models.JSONField(default=list, blank=True)
 
     # Quality & review
     confidence_scores = models.JSONField(

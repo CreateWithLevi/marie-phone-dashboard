@@ -147,6 +147,29 @@ function accuracyColor(correct) {
             </div>
           </div>
 
+          <!-- Playbook Coverage -->
+          <div v-if="call.playbook_answered?.length || call.playbook_unanswered?.length" class="bg-white rounded-lg border p-4">
+            <h3 class="font-semibold text-gray-900 mb-3">Playbook Coverage</h3>
+            <div class="mb-2">
+              <div class="w-full bg-gray-100 rounded-full h-2">
+                <div class="bg-blue-500 h-2 rounded-full" :style="{ width: (call.playbook_completeness * 100) + '%' }"></div>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">{{ (call.playbook_completeness * 100).toFixed(0) }}% complete</p>
+            </div>
+            <ul v-if="call.playbook_answered?.length" class="space-y-1 mb-2">
+              <li v-for="q in call.playbook_answered" :key="q" class="text-sm text-green-600 flex items-start gap-1">
+                <span class="mt-0.5 flex-shrink-0">&#10003;</span>
+                <span>{{ q }}</span>
+              </li>
+            </ul>
+            <ul v-if="call.playbook_unanswered?.length" class="space-y-1">
+              <li v-for="q in call.playbook_unanswered" :key="q" class="text-sm text-red-500 flex items-start gap-1">
+                <span class="mt-0.5 flex-shrink-0">&#10007;</span>
+                <span>{{ q }}</span>
+              </li>
+            </ul>
+          </div>
+
           <!-- Resolution Gaps -->
           <div v-if="call.resolution_gaps?.length" class="bg-white rounded-lg border p-4">
             <h3 class="font-semibold text-gray-900 mb-3">Resolution Gaps</h3>
@@ -154,6 +177,17 @@ function accuracyColor(correct) {
               <li v-for="gap in call.resolution_gaps" :key="gap" class="text-sm text-red-600 flex items-start gap-1">
                 <span class="mt-0.5">!</span>
                 <span>{{ gap }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Recommended Actions -->
+          <div v-if="call.recommended_actions?.length" class="bg-white rounded-lg border p-4">
+            <h3 class="font-semibold text-gray-900 mb-3">Recommended Actions</h3>
+            <ul class="space-y-1">
+              <li v-for="action in call.recommended_actions" :key="action" class="text-sm text-gray-700 flex items-start gap-1">
+                <span class="mt-0.5 text-blue-500 flex-shrink-0">&#8594;</span>
+                <span>{{ action }}</span>
               </li>
             </ul>
           </div>
