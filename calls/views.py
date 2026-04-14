@@ -94,6 +94,25 @@ class PlaybookViewSet(viewsets.ModelViewSet):
         )
         return Response(PlaybookQuestionSerializer(question).data, status=status.HTTP_201_CREATED)
 
+    @action(detail=True, methods=["patch"], url_path="update_question/(?P<question_id>[0-9]+)")
+    def update_question(self, request, pk=None, question_id=None):
+        """Update a question's text."""
+        playbook = self.get_object()
+        try:
+            question = playbook.questions.get(id=question_id)
+        except PlaybookQuestion.DoesNotExist:
+            return Response({"error": "Question not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        text = request.data.get("text", "").strip()
+        if not text:
+            return Response({"error": "text is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        question.text = text
+        if "is_required" in request.data:
+            question.is_required = request.data["is_required"]
+        question.save()
+        return Response(PlaybookQuestionSerializer(question).data)
+
     @action(detail=True, methods=["delete"], url_path="remove_question/(?P<question_id>[0-9]+)")
     def remove_question(self, request, pk=None, question_id=None):
         """Remove a question from a playbook."""

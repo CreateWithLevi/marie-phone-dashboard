@@ -20,6 +20,9 @@ export default {
   addPlaybookQuestion(playbookId, text) {
     return api.post(`/playbooks/${playbookId}/add_question/`, { text })
   },
+  updatePlaybookQuestion(playbookId, questionId, data) {
+    return api.patch(`/playbooks/${playbookId}/update_question/${questionId}/`, data)
+  },
   removePlaybookQuestion(playbookId, questionId) {
     return api.delete(`/playbooks/${playbookId}/remove_question/${questionId}/`)
   },

@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+@theme {
+  /* Intercom-inspired palette */
+  --color-cream: #faf9f6;
+  --color-off-black: #111111;
+  --color-fin-orange: #ff5600;
+  --color-oat: #dedbd6;
+  --color-warm-sand: #d3cec6;
+  --color-muted: #7b7b78;
+  --color-black-60: #626260;
+  --color-black-80: #313130;
+
+  /* Report palette */
+  --color-report-blue: #65b5ff;
+  --color-report-green: #0bdf50;
+  --color-report-red: #c41c1c;
+  --color-report-orange: #fe4c02;
+  --color-report-pink: #ff2067;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-off-black);
+  font-family: -apple-system, system-ui, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  line-height: 1.00;
+  font-weight: 500;
+  color: var(--color-off-black);
+}
+
+h1 { letter-spacing: -1.6px; }
+h2 { letter-spacing: -0.96px; }
+h3 { letter-spacing: -0.48px; }
