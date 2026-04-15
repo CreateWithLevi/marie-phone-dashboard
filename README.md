@@ -4,7 +4,7 @@ An AI-powered dashboard for law firms to review, score, and act on phone intake 
 
 **The problem:** Lawyers using an AI phone assistant (Marie) receive raw transcripts and contact info. They still manually read each transcript to decide: *Is this a good lead? Was the intake complete? What do I need to follow up on?*
 
-**The solution:** A three-agent pipeline that transforms audio recordings into structured, actionable intelligence — with configurable intake playbooks that create a continuous improvement loop.
+**The solution:** A production-minded pipeline that transforms audio recordings into structured, actionable intelligence — with configurable intake playbooks that create a continuous improvement loop. The **Analyzer Agent** is wired with four patterns from modern LLM engineering: **Guardrails**, **Tool Calling**, **Reflection**, and **LLM-as-Judge**.
 
 ## Quick Start
 
@@ -41,36 +41,53 @@ make pipeline-resume   # Resume from last checkpoint (retry failures only)
 
 ## Architecture
 
-### Agentic Pipeline
+### Pipeline Overview
 
 ```
-  ┌──────────┐    ┌──────────────┐    ┌──────────────┐    ┌────────────────┐
-  │  Audio   │───▶│   Agent 1    │───▶│   Agent 2    │───▶│    Agent 3     │
-  │  (.wav)  │    │ Transcriber  │    │ Call Analyzer │    │ Lead Intel     │
-  └──────────┘    └──────────────┘    └──────────────┘    └────────────────┘
+  ┌──────────┐   ┌──────────────┐   ┌──────────────────┐   ┌────────────────┐
+  │  Audio   │──▶│ Transcription│──▶│  Analyzer Agent  │──▶│ Lead Intel     │
+  │  (.wav)  │   │ Step (Whisper)│  │  (4 patterns)    │   │ Agent          │
+  └──────────┘   └──────────────┘   └──────────────────┘   └────────────────┘
                         │                    │                     │
-                   Whisper (local)      LLM (multi-           LLM (multi-
-                        │               backend)               backend)
+                   deterministic     Guardrails → LLM →        LLM scoring
+                   speech-to-text    Tools → Reflection →      vs. playbook
+                        │            LLM-as-Judge                   │
                         ▼                    ▼                     ▼
-                   transcript          contact info,         lead score +
-                                       case type,            reasoning,
-                                       urgency,              playbook
-                                       key facts,            completeness,
-                                       confidence            resolution gaps,
-                                       scores                actions
+                   transcript          contact, case type,    lead score +
+                                       urgency, key facts,    reasoning,
+                                       per-field confidence,  playbook
+                                       tool corrections,      completeness,
+                                       quality audit verdict  gaps, actions
 ```
 
-| Agent | Input | Output | Key Limitation | Mitigation |
-|-------|-------|--------|----------------|------------|
-| **1: Transcriber** | WAV audio | Transcript text | German legal terminology; spoken email/phone accuracy | Benchmark vs `ground_truth.json`; confidence flagging |
-| **2: Call Analyzer** | Transcript | Structured data (contact, case type, urgency, key facts) | LLM hallucination on contact details | Per-field confidence scores; auto human review flag when confidence < 0.6 |
-| **3: Lead Intelligence** | Structured data + playbook questions | Lead score, resolution gaps, playbook completeness, recommended actions | Small sample (30 calls); no calibration data | Transparent reasoning; lawyer override; configurable playbooks |
+| Stage | Kind | Input | Output | Key Limitation | Mitigation |
+|-------|------|-------|--------|----------------|------------|
+| **Transcription Step** | Deterministic (Whisper) | WAV audio | Transcript text | German legal terms; spoken email/phone accuracy | Benchmark vs `ground_truth.json`; downstream confidence flagging |
+| **Analyzer Agent** | LLM + tools + reflection + judge | Transcript | Contact, case type, urgency, key facts, confidence, tool corrections, quality audit | LLM hallucination; overconfident self-assessment | See "Four Patterns in the Analyzer Agent" below |
+| **Lead Intel Agent** | LLM + playbook context | Analyzer output + playbook questions | Lead score, resolution gaps, playbook completeness, recommended actions | Small sample (30 calls); no calibration data | Transparent reasoning; lawyer override; configurable playbooks |
 
-**Why three agents instead of one?**
-1. **Separation of concerns** — transcription accuracy and legal analysis are different problems
+**Honest naming:** Whisper is a deterministic speech-to-text model, not an agent — it doesn't decide anything. We call the LLM stages "agents" because they make judgment calls (what to extract, when to re-extract, when to flag). Conflating the two would be marketing, not engineering.
+
+**Why split the LLM work into two agents?**
+1. **Separation of concerns** — extraction quality and lead scoring are different problems with different failure modes
 2. **Independent testability** — each agent can be evaluated and improved in isolation
-3. **Production scalability** — transcription is compute-heavy, analysis is token-heavy
+3. **Quota isolation** — the Analyzer runs on one API key/model, Lead Intel on another, so rate limits on one don't block the other
 4. **Debuggability** — when output is wrong, you can pinpoint which stage failed
+
+### Four Patterns in the Analyzer Agent
+
+A naive version of this pipeline would be a single LLM call — transcript in, JSON out. That's sequential, not agentic. The Analyzer Agent is wired with four production patterns (numbered against *Generative AI Design Patterns*):
+
+| Pattern | # | What it does | Where to find it |
+|---------|---|--------------|------------------|
+| **Guardrails** | 32 | Clamps transcript length, regex-detects prompt injection (`ignore previous instructions`, `</system>`, etc.) before the LLM ever sees it | `pipeline/guardrails.py` |
+| **Tool Calling** | 21 | Deterministic email validator (regex + domain typo correction + `"at"→@` reconstruction) and E.164 phone formatter. Tools **auto-lower** the LLM's self-reported confidence when they find invalid data, giving Reflection a chance to fire | `pipeline/tools.py` |
+| **Reflection** | 18 | When `first_name`/`last_name`/`email`/`phone` confidence falls below 0.6, re-extracts with a focused prompt that hints at NATO/German spelling alphabet. Only adopts the new result if it's more confident than the first pass | `pipeline/agent_analyzer.py`, `prompts/reflection.txt` |
+| **LLM-as-Judge** | 17 | A second LLM (independent API key, independent context) audits the Analyzer's output for faithfulness, completeness, and accuracy. Returns `accept` / `review` / `reject` + a 1–5 quality score. `review` or `reject` auto-trips `needs_human_review` | `pipeline/quality_gate.py`, `prompts/quality_gate.txt` |
+
+**Why LLM-as-Judge needs its own API key:** self-evaluation is peer pressure with one peer. Using a separate key (and therefore separate quota + separate request context) gives genuine independence — the Judge doesn't share the Analyzer's priors.
+
+**Per-call execution:** The pipeline processes each call through all stages before moving to the next, rather than running all Analyzer calls first and all Lead Intel calls second. If the API quota runs out mid-run, you have N complete results instead of N partial stages. `--resume` retries only the failures.
 
 ### LLM Backend
 
@@ -126,7 +143,7 @@ KPI cards (total calls, avg lead score, avg urgency, needs review) + resolution 
 Filterable and sortable table. Filter by resolution status, sort by lead score or urgency. Search across caller name, email, and summary.
 
 ### Call Detail
-Full transcript, contact info with per-field confidence scores and extraction accuracy indicators, lead score with reasoning, case details, playbook coverage (answered/unanswered questions with progress bar), resolution gaps, and recommended actions.
+Full transcript, contact info with per-field confidence scores and extraction accuracy indicators, lead score with reasoning, case details, playbook coverage (answered/unanswered questions with progress bar), resolution gaps, and recommended actions. Also surfaces the Analyzer Agent's agentic metadata: a **Quality Audit card** (Judge verdict + score + issues + hallucinated fields), a **Tool Corrections card** (what the deterministic tools fixed), and a **Reflected badge** in the header when the Reflection loop fired.
 
 ### Playbook Editor
 Expandable cards per case type. Inline click-to-edit questions, add new questions, remove questions. Required/optional indicators.
@@ -166,7 +183,17 @@ Evaluated against `ground_truth.json` (30 calls):
 | Email | 36.7% | Expected — callers spell email letter-by-letter, Whisper frequently mishears |
 | Phone | 76.7% | Digits correct but formatting inconsistent |
 
-The low email accuracy **validates the design** — this is exactly why we built confidence scoring and human review flags. Production improvements: post-processing rules for letter-by-letter spelling, custom Whisper fine-tuning.
+The low email accuracy **validates the design** — this is exactly why we built Tool Calling (domain typo correction, `"at"→@` reconstruction), confidence scoring, and the Quality Gate. Production improvements: post-processing rules for letter-by-letter spelling, custom Whisper fine-tuning.
+
+### Quality Gate results (30 calls)
+
+| Verdict | Count | What it means |
+|---------|-------|---------------|
+| `accept` | 13 | Judge found the extraction faithful, complete, and accurate |
+| `review` | 17 | Judge flagged something a human should verify (often Tool-applied corrections that deviate from the raw transcript) |
+| `reject` | 0 | No outright hallucinations detected |
+
+**Reflection triggered:** 0/30. Tools fixed most low-confidence cases before Reflection needed to fire — Reflection is the safety net, not the workhorse. The pattern is wired in and tested, ready to catch cases tools can't resolve.
 
 ## Limitations
 
@@ -198,12 +225,15 @@ marie-phone-dashboard/
 │   └── management/commands/
 │       └── seed_data.py            # Load seed data + compute accuracy
 ├── pipeline/                       # Agentic pipeline (standalone)
-│   ├── agent_transcriber.py        # Agent 1: Whisper
-│   ├── agent_analyzer.py           # Agent 2: Structured extraction
-│   ├── agent_lead_intel.py         # Agent 3: Lead scoring + playbook eval
-│   ├── llm_client.py               # Multi-backend LLM client
-│   ├── run_pipeline.py             # Pipeline runner with resume
-│   └── prompts/                    # LLM prompt templates
+│   ├── agent_transcriber.py        # Transcription Step (Whisper, deterministic)
+│   ├── agent_analyzer.py           # Analyzer Agent (4 patterns wired in)
+│   ├── agent_lead_intel.py         # Lead Intel Agent (scoring + playbook eval)
+│   ├── guardrails.py               # Pattern #32: input sanitization
+│   ├── tools.py                    # Pattern #21: email/phone validators
+│   ├── quality_gate.py             # Pattern #17: LLM-as-Judge audit
+│   ├── llm_client.py               # Multi-backend LLM client (key/model rotation)
+│   ├── run_pipeline.py             # Per-call pipeline runner with --resume
+│   └── prompts/                    # LLM prompt templates (analyze/reflection/judge)
 └── frontend/                       # Vue.js 3 + Vite + Tailwind
     └── src/
         ├── App.vue                 # Sidebar layout

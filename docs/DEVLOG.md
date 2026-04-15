@@ -210,3 +210,78 @@ Applied Intercom Fin's visual language consistently: warm cream (`#faf9f6`) back
 
 ### Playbook Inline Edit
 Chose inline edit over modal because lawyers typically edit one question at a time. Click to edit → auto-focus + select text → Enter to save / Escape to cancel. Minimal friction for a simple data model.
+
+---
+
+## Phase 5: Agentic Refactor (Day 3)
+
+### The Self-Critique
+
+Preparing the demo, I re-examined the pipeline and noticed something uncomfortable: *the original Agent 2 was just a single LLM call wrapped in pre/post-processing*. Calling three sequential LLM calls an "agentic pipeline" is marketing, not engineering. Before the interview, I wanted the code to match the claims.
+
+Concretely, the original pipeline had none of the reliability patterns a production LLM system needs:
+- No guardrails — transcripts fed directly to the LLM, wide open to prompt injection
+- No tool calling — the LLM was asked to do deterministic work (validating emails, formatting phones)
+- No reflection — low-confidence extractions were just flagged, not retried
+- No independent verification — the LLM self-reported confidence with no peer review
+
+### Four Patterns Added
+
+Implemented four patterns from *Generative AI Design Patterns*, each with real code (not just documentation):
+
+| Pattern | # | File | What it solves |
+|---------|---|------|----------------|
+| **Guardrails** | 32 | `pipeline/guardrails.py` | `sanitize_transcript()` clamps length and regex-detects prompt injection before the LLM sees the input |
+| **Tool Calling** | 21 | `pipeline/tools.py` | Deterministic email validation (regex + domain typo correction like `gmial→gmail` + `"at"→@` reconstruction) and E.164 phone formatting. Tools **auto-lower the LLM's confidence** when they detect invalid data |
+| **Reflection** | 18 | `agent_analyzer.py` + `prompts/reflection.txt` | When `first_name`/`last_name`/`email`/`phone` confidence < 0.6, re-extract with a focused prompt hinting at NATO/German spelling alphabet. Only adopt the new result if it's more confident than the first pass |
+| **LLM-as-Judge** | 17 | `quality_gate.py` + `prompts/quality_gate.txt` | Independent second LLM audits the Analyzer's output for faithfulness, completeness, accuracy. Returns `accept` / `review` / `reject` + 1–5 quality score |
+
+**Why LLM-as-Judge uses a separate API key:** self-evaluation is peer pressure with one peer. A different key means different quota, different request context, different priors — the Judge genuinely doesn't know what the Analyzer was thinking.
+
+### Honest Naming: Agent 1 → Transcription Step
+
+Writing up the patterns, I noticed a small but important inconsistency: Whisper was called "Agent 1" in the original architecture. But Whisper is deterministic speech-to-text — it doesn't decide anything. Calling it an agent alongside the LLM stages was a category error.
+
+Renamed it to **Transcription Step**. The only "agents" are now the Analyzer Agent and the Lead Intel Agent — the stages where an LLM actually makes judgment calls. This matters because "what is actually agentic here?" is exactly the kind of question a senior engineer will ask in the interview, and the answer should be inspectable in the code.
+
+### Per-Call Pipeline Execution
+
+Rewrote `run_pipeline.py` from stage-by-stage to **per-call** execution. In the original version, if the Analyzer ran 30 calls first and then the Lead Intel ran, a quota failure in the middle of Lead Intel left 30 analyses but only 15 scores — half-finished work. Per-call means each call goes through all stages before the next one starts, so a quota failure leaves N complete results and M untouched calls (recoverable with `--resume`).
+
+Combined with two-key/two-model rotation (Analyzer on key 1 + flash-lite, Quality Gate on key 2 + flash-lite, Lead Intel on key 1 + flash), this survives Gemini free-tier quotas for all 30 calls.
+
+### Data Model Changes
+
+Added three fields to the `Call` model:
+- `reflection_applied: bool` — did the Reflection loop fire?
+- `tool_corrections: list[str]` — what deterministic tools changed
+- `quality_audit: dict` — `{quality_score, verdict, issues, hallucinated_fields}`
+
+Migration `0003_call_quality_audit_call_reflection_applied_and_more.py`. `needs_human_review` now also fires when the Judge verdict is `review` or `reject`, not just on low confidence.
+
+### Frontend Surfacing
+
+Added three visible elements so the new metadata isn't invisible:
+- **Reflected pill** in the detail header when `reflection_applied=True`
+- **Quality Audit card** in the detail right column — verdict pill (accept/review/reject color-coded), quality score `X/5`, issues list, hallucinated fields
+- **Tool Corrections card** — lists what the deterministic tools fixed
+- **Audit column** in the call list — verdict pill per row, hover shows quality score
+
+### Pipeline Re-Run Results
+
+All 30 calls reprocessed with the new pipeline:
+
+| Stage | Success | Notes |
+|-------|---------|-------|
+| Transcription Step | 30/30 | Cached from previous runs |
+| Analyzer Agent | 30/30 | **0 reflections triggered** |
+| Quality Gate | 30/30 | **13 accept / 17 review / 0 reject** |
+| Lead Intel Agent | 30/30 | Score range unchanged |
+
+**Interpreting "0 reflections":** Tools resolved most low-confidence cases before Reflection was needed — the deterministic fixers did their job. Reflection is the safety net, not the workhorse. The pattern is wired in and tested against synthetic low-confidence inputs, ready to catch cases tools can't handle.
+
+**Interpreting "17 review verdicts":** The Judge is skeptical of Tool-applied corrections. For example, on call_01 the Analyzer reconstructed `"johanna.schmitt.aggmail.com"` into `"johanna.schmitt@gmail.com"` (correctly — the caller said "at" instead of "@"), but the Judge flagged this as deviating from the raw transcript. That's not a bug — it's the Judge doing its job. It doesn't know the Tool did the rewrite, and from a pure faithfulness standpoint the extraction no longer matches the transcript verbatim. The `review` verdict says "a human should eyeball this," which is the right stance. The system has genuine tension between Tools (proactive correction) and the Judge (conservative audit), and that tension is surfaced to the lawyer rather than hidden.
+
+### Lesson
+
+The most useful engineering work on this project wasn't building the first version — it was being honest enough to rebuild it. The original pipeline worked; what it lacked was the right to call itself "agentic." Fixing that meant writing more code, but it also meant the interview story became inspectable: every claim in the talking points maps to a file in the repo.
