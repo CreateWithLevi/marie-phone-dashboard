@@ -198,17 +198,17 @@ The low email accuracy **validates the design** — this is exactly why we built
 
 ## Testing
 
-Unit tests cover the **deterministic layer** — the parts of the pipeline where behavior is fully specified and testable in isolation:
+**134 tests** cover the **deterministic layer** — the parts of the pipeline where behavior is fully specified and testable in isolation. Full suite runs in under 0.2s:
 
 ```bash
 make test
 ```
 
-| Test file | Coverage |
-|-----------|----------|
-| `tests/test_tools.py` | Email validation (domain typos, `"at"→@` reconstruction, lowercasing), phone E.164 normalization, contact completeness quality grading, `apply_tools()` confidence adjustment behavior |
-| `tests/test_guardrails.py` | Transcript sanitization (empty, whitespace, length clamp, injection patterns), `validate_agent_output()` required-field checking |
-| `tests/test_analyzer_helpers.py` | `_normalize()` schema enforcement (case type fallback, urgency clamping, confidence scoring defaults) |
+| Test file | Tests | Coverage |
+|-----------|-------|----------|
+| `tests/test_tools.py` | 49 | Email validation (8 domain typos parametrized, German spoken-at variants `at`/`ett`/`ätt`, trailing dot, whitespace, lowercase), phone E.164 normalization (4 separator styles, `0049`/`49`/`+49` prefixes), contact completeness grading, `apply_tools()` confidence-lowering contract (never raises confidence, handles missing `confidence_scores` key) |
+| `tests/test_guardrails.py` | 28 | `sanitize_transcript()` empty/whitespace handling, **every one of the 7 `INJECTION_PATTERNS` parametrized with a covering example**, case-insensitivity, exact-boundary length clamp at `MAX_TRANSCRIPT_LENGTH`, short-transcript warning. `validate_agent_output()` missing-field reporting (single + multi), `None` vs empty-string semantics, suspiciously-long-string warning without invalidating output |
+| `tests/test_analyzer_helpers.py` | 57 | `_normalize()` schema enforcement: **all 8 `VALID_CASE_TYPES` parametrized**, all 4 `VALID_RESOLUTION_STATUSES` parametrized, urgency clamping (over/under/zero/float/numeric string/garbage), `key_facts` coerced to list, `confidence_scores` clamping + numeric-string coercion + non-dict fallback, string-field whitespace stripping |
 
 **What's intentionally not unit-tested:** the LLM stages (`analyze_call`, `audit_extraction`, `score_lead`). Mocking an LLM in a unit test just tests your mock. Those stages are validated via:
 - **LLM-as-Judge Quality Gate** — every extraction is audited against the transcript

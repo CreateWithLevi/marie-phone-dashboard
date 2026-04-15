@@ -282,6 +282,26 @@ All 30 calls reprocessed with the new pipeline:
 
 **Interpreting "17 review verdicts":** The Judge is skeptical of Tool-applied corrections. For example, on call_01 the Analyzer reconstructed `"johanna.schmitt.aggmail.com"` into `"johanna.schmitt@gmail.com"` (correctly — the caller said "at" instead of "@"), but the Judge flagged this as deviating from the raw transcript. That's not a bug — it's the Judge doing its job. It doesn't know the Tool did the rewrite, and from a pure faithfulness standpoint the extraction no longer matches the transcript verbatim. The `review` verdict says "a human should eyeball this," which is the right stance. The system has genuine tension between Tools (proactive correction) and the Judge (conservative audit), and that tension is surfaced to the lawyer rather than hidden.
 
+### Testing the Deterministic Layer
+
+After the agentic rebuild, the deterministic components (tools, guardrails, normalization) had grown complex enough to justify unit tests — and the interview reviewer would likely read tests before reading implementation.
+
+**Coverage — 134 tests, <0.2s runtime:**
+
+| File | Tests | What it pins down |
+|------|-------|-------------------|
+| `tests/test_tools.py` | 49 | Email validator (8 domain typos, German `at`/`ett`/`ätt`, trailing dot, whitespace), phone E.164 normalization, `apply_tools()` confidence-lowering contract |
+| `tests/test_guardrails.py` | 28 | All 7 `INJECTION_PATTERNS` parametrized with covering examples, exact-boundary length clamp, output validator's missing-field and suspiciously-long-string contracts |
+| `tests/test_analyzer_helpers.py` | 57 | `_normalize()` schema enforcement — all 8 `VALID_CASE_TYPES` + 4 resolution statuses parametrized, urgency clamping, confidence-score coercion including non-dict fallback |
+
+**What's not tested and why:** the LLM stages (`analyze_call`, `audit_extraction`, `score_lead`). Mocking an LLM in a unit test just tests the mock. Those stages are validated by the Quality Gate (every extraction audited against the transcript) and by the ground-truth evaluation computed on every seed load. The trade-off is deliberate: **test contracts that have truth values, evaluate behaviors that have distributions**.
+
+**Design choices in the test suite itself:**
+- Every test has a docstring explaining *intent*, not just *behavior* — the reviewer should be able to understand the contract without reading the implementation.
+- Parametrize whenever an enum exists (`VALID_CASE_TYPES`, `INJECTION_PATTERNS`) so adding a new value forces a new covering test.
+- Boundary tests where off-by-one matters (exactly `MAX_TRANSCRIPT_LENGTH`, exactly 10-char threshold, `urgency=0` clamping to 1).
+- A regression-guard test in `test_guardrails.py` that asserts every pattern in `INJECTION_PATTERNS` has a covering example — future additions can't silently bypass coverage.
+
 ### Lesson
 
 The most useful engineering work on this project wasn't building the first version — it was being honest enough to rebuild it. The original pipeline worked; what it lacked was the right to call itself "agentic." Fixing that meant writing more code, but it also meant the interview story became inspectable: every claim in the talking points maps to a file in the repo.
