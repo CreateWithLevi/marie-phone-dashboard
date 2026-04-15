@@ -48,6 +48,7 @@ class CallListSerializer(serializers.ModelSerializer):
             "caller_email", "caller_phone", "case_type", "case_type_name",
             "urgency", "resolution_status", "lead_score",
             "playbook_completeness", "needs_human_review", "summary",
+            "reflection_applied", "quality_audit",
             "created_at",
         ]
 
@@ -70,5 +71,6 @@ class CallDetailSerializer(serializers.ModelSerializer):
             "playbook_completeness", "playbook_answered", "playbook_unanswered",
             "recommended_actions", "confidence_scores",
             "needs_human_review", "extraction_accuracy",
+            "reflection_applied", "tool_corrections", "quality_audit",
             "transcript", "created_at",
         ]

@@ -1,0 +1,410 @@
+[
+  {
+    "quality_score": 3,
+    "faithfulness": 4,
+    "completeness": 4,
+    "accuracy": 3,
+    "issues": [
+      "Email address extracted as 'johanna.schmitt@gmail.com' while transcript states 'johanna.schmitt.aggmail.com'.",
+      "The key fact \"Caller provided email address: johanna.schmitt.aggmail.com\" is inconsistent with the extracted email field."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "review",
+    "call_id": "call_01"
+  },
+  {
+    "quality_score": 3,
+    "faithfulness": 4,
+    "completeness": 4,
+    "accuracy": 3,
+    "issues": [
+      "Email address is missing parts of the address provided in the transcript (h47 minus Herbst at web.de vs. herbst@web.de)",
+      "Email address domain is incorrect based on transcript (web.de vs. web.de). The transcript says 'at web.de', which implies the domain is web.de. The email extraction incorrectly uses 'herbst@web.de' which does not match the transcript.",
+      "The email address in the transcript is 'h47 minus Herbst at web.de' which was transcribed as 'herbst@web.de' in the extraction. This is a significant difference and likely incorrect."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "review",
+    "call_id": "call_02"
+  },
+  {
+    "quality_score": 4,
+    "faithfulness": 5,
+    "completeness": 4,
+    "accuracy": 4,
+    "issues": [
+      "The case_type 'General Inquiry' is a reasonable interpretation but not explicitly stated in the transcript. The caller states they have a 'rechtliche Frage' (legal question)."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "accept",
+    "call_id": "call_03"
+  },
+  {
+    "quality_score": 4,
+    "faithfulness": 5,
+    "completeness": 4,
+    "accuracy": 4,
+    "issues": [
+      "The phone number extraction omits the leading zero, which might be important for international calls depending on the dialing plan.",
+      "The email address is missing the domain TLD, and appears to be a typo in the transcript ('etoutglupp.com' instead of a likely valid domain)."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "review",
+    "call_id": "call_04"
+  },
+  {
+    "quality_score": 3,
+    "faithfulness": 3,
+    "completeness": 4,
+    "accuracy": 3,
+    "issues": [
+      "Email address: The transcript spells out 'et' for '@' and 't-minus-online' for 't-online'. The extraction interprets this correctly as 'sandra.weber@t-online.de', but the 'key_facts' field incorrectly reflects the spelled-out version.",
+      "Phone number: The transcript says 'plus für 9...' indicating a '+' prefix. The extraction correctly formats it as '+49 172 44556677', but the 'key_facts' field again incorrectly reflects the spelled-out version.",
+      "Case type: 'General Inquiry' is a reasonable interpretation, but the transcript does not explicitly state the case type, only that it is a 'rechtlichen Frage' (legal question)."
+    ],
+    "hallucinated_fields": [
+      "case_type",
+      "urgency",
+      "resolution_status"
+    ],
+    "verdict": "review",
+    "call_id": "call_05"
+  },
+  {
+    "quality_score": 4,
+    "faithfulness": 5,
+    "completeness": 4,
+    "accuracy": 4,
+    "issues": [
+      "The case type 'Employment Law' is an inference, not explicitly stated in the transcript.",
+      "The urgency level '3' is an interpretation of the urgency."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "accept",
+    "call_id": "call_06"
+  },
+  {
+    "quality_score": 3,
+    "faithfulness": 4,
+    "completeness": 3,
+    "accuracy": 3,
+    "issues": [
+      "Email address is slightly different in the transcript and the extraction. Transcript: Julia.SCHRE.DRATWAP.DE, Extraction: julia.schre.drat@web.de",
+      "The transcript states 'Aufbau und Fall', which implies a structure or setup and a case. 'General Inquiry' is a broad classification and might miss the nuance of seeking information about a specific situation ('Fall').",
+      "The transcript mentions 'Aufbau und Fall' which could be interpreted as more than just a general inquiry, potentially indicating a need for specific legal advice regarding the event itself, not just general information."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "review",
+    "call_id": "call_07"
+  },
+  {
+    "quality_score": 3,
+    "faithfulness": 4,
+    "completeness": 4,
+    "accuracy": 3,
+    "issues": [
+      "The email address in the transcript is spelled 'G-M-X, Punkt N-E-U-M-A-N-N, et G-M-X, Punkt N-E-U-M-A-S', which is ambiguous. The extraction assumes 'thomas.neumann@gmx.de', but the spelling provided in the transcript does not clearly support the '.de' domain. It's possible it's meant to be a different domain or a typo.",
+      "The phone number in the transcript is 'Plus490, 888, 999, 1, 2, 3, 4'. The extraction ' +49 088 89991234' assumes the '0' after the country code is correct and concatenates the rest. While plausible, the transcript's structure with commas after each number suggests a potential for misinterpretation or a different numbering scheme.",
+      "The case type 'Family Law' is inferred, but the transcript only mentions 'Unterhalt' (maintenance/support). While 'Unterhalt' often falls under family law, it's not explicitly stated, making this an inference rather than a direct extraction.",
+      "The urgency is rated as 2. There is no information in the transcript to support this rating."
+    ],
+    "hallucinated_fields": [
+      "urgency"
+    ],
+    "verdict": "review",
+    "call_id": "call_08"
+  },
+  {
+    "quality_score": 4,
+    "faithfulness": 5,
+    "completeness": 4,
+    "accuracy": 4,
+    "issues": [
+      "The email address in the transcript is 'Petra-M, et Yahoo.de' which seems to be a typo or misspoken. The extraction 'petra.m@yahoo.de' corrects this, which is good, but it's not a direct transcription. The phone number is also slightly different, with spaces in the transcript (plus 4.9, 1.62, 7.76, 5.5.4) versus the extracted '+49 162 7765554'."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "accept",
+    "call_id": "call_09"
+  },
+  {
+    "quality_score": 4,
+    "faithfulness": 5,
+    "completeness": 4,
+    "accuracy": 4,
+    "issues": [
+      "The email address provided in the transcript is 'Outlook-Punktee', which likely means 'Outlook.de' or 'Outlook.com'. The extraction 'outlook.de' is a reasonable interpretation but not directly stated.",
+      "The phone number formatting in the extraction (+49 213 33445566) is a more structured interpretation than the spoken numbers. This is acceptable, but not a direct transcription."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "accept",
+    "call_id": "call_10"
+  },
+  {
+    "quality_score": 3,
+    "faithfulness": 3,
+    "completeness": 4,
+    "accuracy": 3,
+    "issues": [
+      "The case_type 'Landlord-Tenant' is not supported by the transcript. The transcript mentions a 'Nachbarschaftsstreitigkeit' (neighborhood dispute).",
+      "The phone number format is slightly inaccurate. The transcript provides '+4.9178.1122.3344' whereas the extraction is '+49 178 11223344'. While the intention is clear, the formatting differs."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "review",
+    "call_id": "call_11"
+  },
+  {
+    "quality_score": 4,
+    "faithfulness": 4,
+    "completeness": 4,
+    "accuracy": 4,
+    "issues": [
+      "The phone number formatting is slightly different than the transcript. The transcript has pauses indicated by commas, which are not present in the extraction."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "accept",
+    "call_id": "call_12"
+  },
+  {
+    "quality_score": 5,
+    "faithfulness": 5,
+    "completeness": 5,
+    "accuracy": 5,
+    "issues": [],
+    "hallucinated_fields": [],
+    "verdict": "accept",
+    "call_id": "call_13"
+  },
+  {
+    "quality_score": 4,
+    "faithfulness": 5,
+    "completeness": 4,
+    "accuracy": 4,
+    "issues": [
+      "The transcript does not explicitly state the urgency. The classification of urgency as 3 is an inference.",
+      "The case type 'Employment Law' is an inference based on the term 'Kündigung' (termination), which is reasonable but not explicitly stated in the transcript."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "accept",
+    "call_id": "call_14"
+  },
+  {
+    "quality_score": 4,
+    "faithfulness": 5,
+    "completeness": 4,
+    "accuracy": 4,
+    "issues": [
+      "The transcript mentions \"Guten Morgen, mein Name ist Richter, Monika Richter\" which could imply that \"Richter\" is the last name. The email and phone number are also provided as contact details. The case type \"Employment Law\" is a reasonable inference from the mention of a \"Kündigung\" (termination notice). The summary accurately reflects the caller's request and provided contact information. However, the urgency is not explicitly stated in the transcript and is assigned a value of 3, which is an inference."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "accept",
+    "call_id": "call_15"
+  },
+  {
+    "quality_score": 4,
+    "faithfulness": 5,
+    "completeness": 4,
+    "accuracy": 4,
+    "issues": [
+      "The email address in the transcript is 'James.endassen.gmail.com' (with a dot instead of @), but the extraction lists it as 'james.endassen@gmail.com'. This is a likely transcription error in the original transcript, but it is not precisely what was transcribed."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "accept",
+    "call_id": "call_16"
+  },
+  {
+    "quality_score": 3,
+    "faithfulness": 3,
+    "completeness": 4,
+    "accuracy": 3,
+    "issues": [
+      "Email address in transcript is 'SOPH.DOBOSETOUTLOG.FR', but extracted as 'soph.dobosetout@log.fr'. The '@' and domain seem to be hallucinated.",
+      "The phone number in the transcript has spaces between digits, while the extracted phone number has them removed. This is a minor accuracy issue but should be noted.",
+      "The 'key_facts' are more of a summary of what was said rather than discrete facts.",
+      "The 'summary' field is redundant with the 'key_facts' and contains similar information."
+    ],
+    "hallucinated_fields": [
+      "email"
+    ],
+    "verdict": "review",
+    "call_id": "call_17"
+  },
+  {
+    "quality_score": 5,
+    "faithfulness": 5,
+    "completeness": 5,
+    "accuracy": 5,
+    "issues": [],
+    "hallucinated_fields": [],
+    "verdict": "accept",
+    "call_id": "call_18"
+  },
+  {
+    "quality_score": 2,
+    "faithfulness": 2,
+    "completeness": 3,
+    "accuracy": 2,
+    "issues": [
+      "The case_type 'Landlord-Tenant' is not supported by the transcript, which mentions a 'neighborhood dispute'.",
+      "The phone number extraction is incorrect; the transcript provides a sequence of numbers that do not form a coherent phone number, and the extracted number '+49 152 88456789' is a hallucination.",
+      "The urgency level '2' is subjective and not directly derivable from the transcript.",
+      "The key fact 'Caller provided phone number and email address' is inaccurate as the provided phone number is nonsensical."
+    ],
+    "hallucinated_fields": [
+      "phone",
+      "urgency",
+      "case_type"
+    ],
+    "verdict": "review",
+    "call_id": "call_19"
+  },
+  {
+    "quality_score": 3,
+    "faithfulness": 4,
+    "completeness": 4,
+    "accuracy": 3,
+    "issues": [
+      "The transcript mentions \"Aufverunfer\", which is likely a typo for \"Unfallverursacher\" (accident perpetrator) or \"Unfall\" (accident). The extraction interprets this as \"accident\", which is a reasonable assumption but not explicitly stated. The phrase \"mitm Steinen\" is unclear but possibly relates to the accident context.",
+      "The case type 'Traffic Law' is an interpretation. While an accident often falls under traffic law, the transcript does not explicitly state the legal area.",
+      "The urgency is rated as 3, but there is no explicit mention of urgency in the transcript that would allow for a numerical rating."
+    ],
+    "hallucinated_fields": [
+      "urgency"
+    ],
+    "verdict": "review",
+    "call_id": "call_20"
+  },
+  {
+    "quality_score": 4,
+    "faithfulness": 4,
+    "completeness": 5,
+    "accuracy": 4,
+    "issues": [
+      "The case type 'Traffic Law' is an interpretation, the transcript states 'Auferunfall' which directly translates to 'traffic accident'."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "accept",
+    "call_id": "call_21"
+  },
+  {
+    "quality_score": 0,
+    "faithfulness": 0,
+    "completeness": 0,
+    "accuracy": 0,
+    "issues": [
+      "Quality gate failed: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=AIzaSyCxaYr3OSscRUSI5mbY3JJAwxWMj-LkVqc"
+    ],
+    "hallucinated_fields": [],
+    "verdict": "review",
+    "call_id": "call_22"
+  },
+  {
+    "quality_score": 4,
+    "faithfulness": 4,
+    "completeness": 4,
+    "accuracy": 4,
+    "issues": [
+      "The case_type 'General Inquiry' is a reasonable interpretation but not explicitly stated in the transcript.",
+      "The urgency score of 5 is an interpretation of 'schnellstmöglich' (as soon as possible) and not a direct extraction."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "accept",
+    "call_id": "call_23"
+  },
+  {
+    "quality_score": 3,
+    "faithfulness": 4,
+    "completeness": 3,
+    "accuracy": 3,
+    "issues": [
+      "The case type was extracted as \"Landlord-Tenant\", but the transcript mentions a \"Nachbarschaftsstreitigkeit\" which translates to \"neighborhood dispute\", not specifically a landlord-tenant issue.",
+      "The phone number in the transcript is spoken as \"plus 4 9 1 6 2 4 4 9 0 1 2 3 4\". The extraction omits the spaces and presents it as \"+4916244901234\", which is a slight, though potentially common, deviation.",
+      "The urgency level is rated as 4, but the transcript only states \"schnellstmögliche rechtliche Beratung\" (as soon as possible legal advice), which is subjective and not easily quantifiable to a specific numerical rating without further context or a defined scale."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "review",
+    "call_id": "call_24"
+  },
+  {
+    "quality_score": 4,
+    "faithfulness": 4,
+    "completeness": 4,
+    "accuracy": 4,
+    "issues": [
+      "The email address in the extraction 'marie.lefravre.et@yahoo.fr' has a typo. The transcript states 'marie.lefavre.et@yahoo.fr'."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "review",
+    "call_id": "call_25"
+  },
+  {
+    "quality_score": 2,
+    "faithfulness": 2,
+    "completeness": 3,
+    "accuracy": 2,
+    "issues": [
+      "The 'case_type' is classified as 'Landlord-Tenant', but the transcript describes a 'Nachbarschaftsstreitigkeit' (neighbor dispute), which is a different legal area.",
+      "The phone number was transcribed with an extra space between '4.9' and '151', and also between '151' and '6'. The correct extraction is '+49 151 6 6123456' or '+4915166123456'. The extraction has '+49 151 66123456', missing a digit.",
+      "The email extraction is missing the dot before 'gmail.com'."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "review",
+    "call_id": "call_26"
+  },
+  {
+    "quality_score": 3,
+    "faithfulness": 4,
+    "completeness": 4,
+    "accuracy": 3,
+    "issues": [
+      "The case type 'Employment Law' is an interpretation not directly stated in the transcript. The transcript mentions 'Königung', which means termination, but does not specify the area of law.",
+      "The email address is slightly misspelled in the extraction ('olivier.smithet-iCloud.com' instead of 'olivier.smith@icloud.com')."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "review",
+    "call_id": "call_27"
+  },
+  {
+    "quality_score": 2,
+    "faithfulness": 2,
+    "completeness": 3,
+    "accuracy": 2,
+    "issues": [
+      "Email address contains '.at' which is incorrect and should be '@'.",
+      "Phone number formatting is incorrect, extra spaces and missing a digit.",
+      "The urgency level of 4 seems to be an arbitrary interpretation, as the transcript only states 'schnellstmögliche Rückmeldung' (quickest possible feedback).",
+      "Case type 'Traffic Law' is an assumption, the transcript mentions 'Unfall' (accident) but doesn't specify traffic."
+    ],
+    "hallucinated_fields": [
+      "urgency",
+      "case_type"
+    ],
+    "verdict": "review",
+    "call_id": "call_28"
+  },
+  {
+    "quality_score": 4,
+    "faithfulness": 5,
+    "completeness": 4,
+    "accuracy": 4,
+    "issues": [
+      "The email address in the transcript is 'Isabella.machtines.adgmail.com', which appears to be a typo. The extracted email 'isabella.martinez@gmail.com' is a corrected version. While likely intended, it's not an exact match to the transcript.",
+      "The phone number in the transcript is '+4.915799456789'. The extracted phone number '+49 157 99456789' appears to have a space inserted after the country code. This is likely a formatting correction, but not an exact match.",
+      "The `key_facts` and `summary` fields are reasonable inferences but not direct quotes or explicitly stated facts in the transcript. They represent a good interpretation of the caller's intent."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "accept",
+    "call_id": "call_29"
+  },
+  {
+    "quality_score": 3,
+    "faithfulness": 3,
+    "completeness": 4,
+    "accuracy": 3,
+    "issues": [
+      "The case type 'Landlord-Tenant' is not supported by the transcript. The transcript mentions a 'Nachbarschaftsstreitigkeit' which translates to 'neighborhood dispute', not specifically landlord-tenant issues.",
+      "The urgency score of 4 is subjective and not directly quantifiable from the transcript. The caller states they need advice 'schnellstmöglich' (as soon as possible), which could be interpreted in various ways regarding urgency."
+    ],
+    "hallucinated_fields": [],
+    "verdict": "review",
+    "call_id": "call_30"
+  }
+]

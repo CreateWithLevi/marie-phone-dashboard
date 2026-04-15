@@ -107,6 +107,20 @@ class Call(models.Model):
     )
     needs_human_review = models.BooleanField(default=False)
 
+    # Agentic pipeline metadata
+    reflection_applied = models.BooleanField(
+        default=False,
+        help_text='True if Agent 2 re-extracted low-confidence fields'
+    )
+    tool_corrections = models.JSONField(
+        default=list, blank=True,
+        help_text='List of corrections applied by deterministic tools (email validator, phone formatter)'
+    )
+    quality_audit = models.JSONField(
+        default=dict, blank=True,
+        help_text='LLM-as-Judge audit result: quality_score, verdict, issues, hallucinated_fields'
+    )
+
     # Ground truth evaluation
     extraction_accuracy = models.JSONField(
         default=dict, blank=True,

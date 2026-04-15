@@ -33,6 +33,12 @@ function scoreColor(s) {
   if (s >= 40) return 'text-[#fe4c02]'
   return 'text-[#c41c1c]'
 }
+
+function verdictClass(v) {
+  if (v === 'accept') return 'bg-[#0bdf50]/10 text-[#0a8a36]'
+  if (v === 'reject') return 'bg-[#c41c1c]/10 text-[#c41c1c]'
+  return 'bg-[#fe4c02]/10 text-[#fe4c02]'
+}
 </script>
 
 <template>
@@ -53,6 +59,9 @@ function scoreColor(s) {
           <p class="text-xs text-muted font-mono mt-1">{{ call.call_id }}</p>
         </div>
         <div class="flex gap-2">
+          <span v-if="call.reflection_applied" class="px-3 py-1 rounded text-xs font-medium bg-[#65b5ff]/10 text-[#2167a8]">
+            Reflected
+          </span>
           <span v-if="call.needs_human_review" class="px-3 py-1 rounded text-xs font-medium bg-[#ff5600]/10 text-[#ff5600]">
             Needs Review
           </span>
@@ -189,6 +198,39 @@ function scoreColor(s) {
               <li v-for="a in call.recommended_actions" :key="a" class="text-sm flex items-start gap-1.5">
                 <span class="mt-0.5 text-[#65b5ff] flex-shrink-0">&rarr;</span>
                 <span class="text-black-60">{{ a }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quality Audit (LLM-as-Judge) -->
+          <div v-if="call.quality_audit?.verdict" class="bg-white rounded-lg border border-oat p-5">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-medium text-off-black tracking-[-0.48px]">Quality Audit</h3>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium capitalize" :class="verdictClass(call.quality_audit.verdict)">
+                {{ call.quality_audit.verdict }}
+              </span>
+            </div>
+            <div class="text-sm text-black-60 mb-3">
+              Score <span class="font-medium text-off-black">{{ call.quality_audit.quality_score }}/5</span>
+            </div>
+            <ul v-if="call.quality_audit.issues?.length" class="space-y-1.5 mb-2">
+              <li v-for="issue in call.quality_audit.issues" :key="issue" class="text-sm flex items-start gap-1.5">
+                <span class="mt-0.5 text-[#fe4c02] flex-shrink-0">!</span>
+                <span class="text-black-60">{{ issue }}</span>
+              </li>
+            </ul>
+            <div v-if="call.quality_audit.hallucinated_fields?.length" class="text-[11px] text-muted uppercase tracking-widest mt-2">
+              Hallucinated: <span class="text-[#c41c1c]">{{ call.quality_audit.hallucinated_fields.join(', ') }}</span>
+            </div>
+          </div>
+
+          <!-- Tool Corrections -->
+          <div v-if="call.tool_corrections?.length" class="bg-white rounded-lg border border-oat p-5">
+            <h3 class="text-sm font-medium text-off-black mb-4 tracking-[-0.48px]">Tool Corrections</h3>
+            <ul class="space-y-1.5">
+              <li v-for="c in call.tool_corrections" :key="c" class="text-sm flex items-start gap-1.5">
+                <span class="mt-0.5 text-[#65b5ff] flex-shrink-0">&#9873;</span>
+                <span class="text-black-60">{{ c }}</span>
               </li>
             </ul>
           </div>

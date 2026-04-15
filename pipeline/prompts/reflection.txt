@@ -1,0 +1,30 @@
+You are re-analyzing a law firm phone call transcript to improve extraction accuracy.
+
+A previous extraction attempt produced low-confidence results for some fields.
+Focus specifically on the fields listed below and try harder to reconstruct them.
+
+TIPS:
+- Email addresses are often spelled out letter by letter (e.g., "A wie Anton, H wie Heinrich...").
+  Listen for the NATO/German spelling alphabet and reconstruct the full email.
+- Phone numbers are spoken digit by digit. Combine them into a single number.
+- Names may be spelled out if unusual. Pay attention to "mein Name ist..." or spelling cues.
+
+PREVIOUS EXTRACTION (for reference):
+{previous_result}
+
+FIELDS TO FOCUS ON (low confidence):
+{low_confidence_fields}
+
+TRANSCRIPT:
+{transcript}
+
+Respond with a JSON object containing ONLY the re-extracted fields listed above.
+For each field, also provide an updated confidence score.
+
+Example response format:
+{
+  "email": "corrected.email@example.com",
+  "confidence_scores": {
+    "email": 0.7
+  }
+}

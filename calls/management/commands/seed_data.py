@@ -242,6 +242,10 @@ class Command(BaseCommand):
                 "confidence_scores": analysis.get("confidence_scores", {}),
                 "needs_human_review": analysis.get("needs_human_review", False),
                 "extraction_accuracy": extraction_accuracy,
+                # Agentic pipeline metadata
+                "reflection_applied": analysis.get("reflection_applied", False),
+                "tool_corrections": analysis.get("tool_corrections", []),
+                "quality_audit": analysis.get("quality_audit", {}),
             },
         )
 

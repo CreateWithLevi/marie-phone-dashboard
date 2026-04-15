@@ -1,5 +1,9 @@
 """
-Agent 1: Transcriber — Whisper speech-to-text
+Transcription Step — Whisper speech-to-text (deterministic, not an agent)
+
+This is a deterministic processing step, not an agent. It has no decision-making
+capability — it simply converts audio to text using Whisper. The distinction
+matters: agents reason and act, this step transforms data.
 
 Input:  Path to WAV audio file
 Output: {

@@ -34,6 +34,12 @@ def set_api_key(key_number: int = 1):
         GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 
 
+def set_model(model: str):
+    """Switch the Gemini model. Different models have separate RPD quotas."""
+    global GEMINI_MODEL
+    GEMINI_MODEL = model
+
+
 def llm_generate(prompt: str, system: str = "", json_mode: bool = False) -> str:
     """Send a prompt to the configured LLM backend and return the response text.
 

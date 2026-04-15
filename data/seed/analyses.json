@@ -3,180 +3,90 @@
     "first_name": "Jana",
     "last_name": "Schmidt",
     "email": "johanna.schmitt@gmail.com",
-    "phone": "+4915211223456",
+    "phone": "+49 152 11223456",
     "case_type": "General Inquiry",
     "urgency": 1,
     "key_facts": [
-      "Caller wishes to discuss a legal question with an attorney."
+      "Caller is named Jana Schmidt",
+      "Caller has a legal question",
+      "Caller provided email address: johanna.schmitt.aggmail.com",
+      "Caller provided phone number: +4915211223456"
     ],
-    "summary": "Jana Schmidt called to discuss a legal question and provided her email as johanna.schmitt@gmail.com and phone number as +4915211223456.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 0.9,
-      "last_name": 0.9,
-      "email": 0.8,
-      "phone": 0.9,
-      "case_type": 0.5
-    },
-    "needs_human_review": false,
-    "call_id": "call_01"
-  },
-  {
-    "first_name": "Herbert",
-    "last_name": "Herbst",
-    "email": "herbst@web.de",
-    "phone": "+4915723141231",
-    "case_type": "General Inquiry",
-    "urgency": 1,
-    "key_facts": [
-      "caller has a legal question",
-      "caller wants to discuss with an attorney"
-    ],
-    "summary": "The caller, Herbert Herbst, has a legal question and wishes to speak with an attorney. He provided his email and phone number.",
+    "summary": "Jana Schmidt called with a legal question and provided her email address and phone number for follow-up.",
     "resolution_status": "needs_followup",
     "confidence_scores": {
       "first_name": 1.0,
       "last_name": 1.0,
       "email": 0.9,
-      "phone": 0.9,
-      "case_type": 0.7
+      "phone": 1.0,
+      "case_type": 0.5
     },
-    "needs_human_review": false,
-    "call_id": "call_02"
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_01",
+    "quality_audit": {
+      "quality_score": 3,
+      "verdict": "review",
+      "issues": [
+        "Email address extracted as 'johanna.schmitt@gmail.com' while transcript states 'johanna.schmitt.aggmail.com'.",
+        "The key fact \"Caller provided email address: johanna.schmitt.aggmail.com\" is inconsistent with the extracted email field."
+      ],
+      "hallucinated_fields": []
+    }
+  },
+  {
+    "first_name": "Herbert",
+    "last_name": "Herbst",
+    "email": "herbst@web.de",
+    "phone": "+49 157 231412313",
+    "case_type": "General Inquiry",
+    "urgency": 1,
+    "key_facts": [
+      "Caller has a legal question",
+      "Wants to discuss with a lawyer from the firm"
+    ],
+    "summary": "Herbert Herbst is calling with a general legal question and provided his contact information for a follow-up.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 0.9,
+      "phone": 1.0,
+      "case_type": 0.8
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_02",
+    "quality_audit": {
+      "quality_score": 3,
+      "verdict": "review",
+      "issues": [
+        "Email address is missing parts of the address provided in the transcript (h47 minus Herbst at web.de vs. herbst@web.de)",
+        "Email address domain is incorrect based on transcript (web.de vs. web.de). The transcript says 'at web.de', which implies the domain is web.de. The email extraction incorrectly uses 'herbst@web.de' which does not match the transcript.",
+        "The email address in the transcript is 'h47 minus Herbst at web.de' which was transcribed as 'herbst@web.de' in the extraction. This is a significant difference and likely incorrect."
+      ],
+      "hallucinated_fields": []
+    }
   },
   {
     "first_name": "Anika",
     "last_name": "Becker",
     "email": "anika.becker@gmx.de",
-    "phone": "+4917698765432",
+    "phone": "+49 176 98765432",
     "case_type": "General Inquiry",
     "urgency": 1,
     "key_facts": [
       "Caller has a legal question.",
-      "Caller tried to reach someone and could not.",
-      "Caller provided email and phone number for a callback."
+      "Caller wants to discuss with a lawyer.",
+      "Caller provided email and phone number for follow-up."
     ],
-    "summary": "Anika Becker called with a legal question and would like to speak with an attorney. She provided her email and phone number for a callback.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 1.0,
-      "last_name": 1.0,
-      "email": 1.0,
-      "phone": 1.0,
-      "case_type": 0.8
-    },
-    "needs_human_review": false,
-    "call_id": "call_03"
-  },
-  {
-    "first_name": "Matthias",
-    "last_name": "Hoffmann",
-    "email": "m.hoffmann@etoutglupp.com",
-    "phone": "+49054783219",
-    "case_type": "Employment Law",
-    "urgency": 4,
-    "key_facts": [
-      "Caller was terminated two days ago.",
-      "Caller believes the termination was unlawful.",
-      "Caller wants to speak with a lawyer about the termination."
-    ],
-    "summary": "Matthias Hoffmann was terminated two days ago and believes it was unlawful. He is seeking legal counsel and provided his email and phone number.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 1.0,
-      "last_name": 1.0,
-      "email": 1.0,
-      "phone": 1.0,
-      "case_type": 1.0
-    },
-    "needs_human_review": false,
-    "call_id": "call_04"
-  },
-  {
-    "first_name": "Sandra",
-    "last_name": "Weber",
-    "email": "sandraweber@t-online.de",
-    "phone": "+4917244556677",
-    "case_type": "General Inquiry",
-    "urgency": 1,
-    "key_facts": [
-      "Caller has a legal question.",
-      "Caller provided name, email, and phone number."
-    ],
-    "summary": "Sandra Weber is calling with a legal question and provides her contact information via email and phone number for a response.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 1.0,
-      "last_name": 1.0,
-      "email": 1.0,
-      "phone": 1.0,
-      "case_type": 0.5
-    },
-    "needs_human_review": false,
-    "call_id": "call_05"
-  },
-  {
-    "first_name": "Klaus",
-    "last_name": "Fischer",
-    "email": "k.fischer1983@gmail.com",
-    "phone": "+498977234561",
-    "case_type": "Employment Law",
-    "urgency": 3,
-    "key_facts": [
-      "Caller received a notice of termination (Kündigung)",
-      "Caller is seeking legal advice regarding the termination"
-    ],
-    "summary": "Klaus Fischer is calling to seek legal assistance regarding a notice of termination he received and requested a callback.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 1.0,
-      "last_name": 1.0,
-      "email": 0.95,
-      "phone": 0.95,
-      "case_type": 1.0
-    },
-    "needs_human_review": false,
-    "call_id": "call_06"
-  },
-  {
-    "first_name": "Julia",
-    "last_name": "Schröder",
-    "email": "Julia.Schrader@web.de",
-    "phone": "+4915122998877",
-    "case_type": "General Inquiry",
-    "urgency": 1,
-    "key_facts": [
-      "Caller is seeking legal information about a 'Aufbau und fall'",
-      "Caller's name is Julia Schröder",
-      "Caller provided email address Julia.Schrader@web.de",
-      "Caller provided phone number +4915122998877"
-    ],
-    "summary": "Julia Schröder is seeking legal information regarding a 'Aufbau und fall' and has provided her contact details for a callback.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 0.9,
-      "last_name": 0.9,
-      "email": 0.7,
-      "phone": 0.9,
-      "case_type": 0.5
-    },
-    "needs_human_review": false,
-    "call_id": "call_07"
-  },
-  {
-    "first_name": "Thomas",
-    "last_name": "Neumann",
-    "email": "thomas.neumann@gmx.de",
-    "phone": "+4908889991234",
-    "case_type": "Family Law",
-    "urgency": 2,
-    "key_facts": [
-      "Caller has a question about child support ('Unterhaltsfrage').",
-      "Caller's name is Thomas Neumann.",
-      "Caller provided email: T-H-O-M-A-S, N-E-U-M-A-N-N, G-M-X, N-E-U-M-A-S",
-      "Caller provided phone number: Plus490, 888, 999, 1, 2, 3, 4"
-    ],
-    "summary": "Thomas Neumann called with a question regarding child support. He provided his email address and phone number for a callback.",
+    "summary": "Anika Becker is calling with a legal question and wishes to speak with an attorney. She provided her email and phone number for a callback.",
     "resolution_status": "needs_followup",
     "confidence_scores": {
       "first_name": 0.9,
@@ -185,281 +95,149 @@
       "phone": 0.8,
       "case_type": 0.7
     },
-    "needs_human_review": false,
-    "call_id": "call_08"
-  },
-  {
-    "first_name": "Petra",
-    "last_name": "Müller",
-    "email": "petra-m@yahoo.de",
-    "phone": "+49162776554",
-    "case_type": "General Inquiry",
-    "urgency": 1,
-    "key_facts": [
-      "Caller is seeking legal advice",
-      "Caller provided contact information for follow-up"
+    "tool_corrections": [
+      "Formatted to standard layout"
     ],
-    "summary": "Petra Müller reached out to the law firm to request a consultation regarding a general legal question.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 1.0,
-      "last_name": 1.0,
-      "email": 0.95,
-      "phone": 0.95,
-      "case_type": 0.8
-    },
+    "reflection_applied": false,
     "needs_human_review": false,
-    "call_id": "call_09"
+    "call_id": "call_03",
+    "quality_audit": {
+      "quality_score": 4,
+      "verdict": "accept",
+      "issues": [
+        "The case_type 'General Inquiry' is a reasonable interpretation but not explicitly stated in the transcript. The caller states they have a 'rechtliche Frage' (legal question)."
+      ],
+      "hallucinated_fields": []
+    }
   },
   {
-    "first_name": "Stefan",
-    "last_name": "Zimmermann",
-    "email": "s.zimmermann@outlook.de",
-    "phone": "+4921333445566",
-    "case_type": "General Inquiry",
-    "urgency": 1,
-    "key_facts": [
-      "Caller has a legal question.",
-      "Caller's name is Stefan Zimmermann.",
-      "Caller provided email address: s.zimmermann@outlook.de",
-      "Caller provided phone number: +4921333445566"
-    ],
-    "summary": "Stefan Zimmermann called with a legal question and provided his email address and phone number for a response.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 1.0,
-      "last_name": 1.0,
-      "email": 1.0,
-      "phone": 1.0,
-      "case_type": 0.8
-    },
-    "needs_human_review": false,
-    "call_id": "call_10"
-  },
-  {
-    "first_name": "Brigitte",
-    "last_name": "Koch",
-    "email": "brigitte.koch@freenet.de",
-    "phone": "+4917811223344",
-    "case_type": "Landlord-Tenant",
-    "urgency": 2,
-    "key_facts": [
-      "Caller is involved in a neighborhood dispute.",
-      "Caller wishes to be contacted by email or phone."
-    ],
-    "summary": "Brigitte Koch is experiencing a neighborhood dispute and requests legal assistance. She provided her email address and phone number for follow-up.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 1.0,
-      "last_name": 1.0,
-      "email": 1.0,
-      "phone": 1.0,
-      "case_type": 0.8
-    },
-    "needs_human_review": false,
-    "call_id": "call_11"
-  },
-  {
-    "first_name": "Michael",
-    "last_name": "Wagner",
-    "email": "michael_wagner@gmx.de",
-    "phone": "+496999887766",
-    "case_type": "General Inquiry",
-    "urgency": 1,
-    "key_facts": [
-      "Caller has a legal question",
-      "Caller wishes to speak with an attorney",
-      "Caller provided email and phone number for contact"
-    ],
-    "summary": "Michael Wagner is calling with a legal question and wishes to speak with an attorney. He provided his contact information via email and phone number.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 0.9,
-      "last_name": 0.9,
-      "email": 0.9,
-      "phone": 0.9,
-      "case_type": 0.8
-    },
-    "needs_human_review": false,
-    "call_id": "call_12"
-  },
-  {
-    "first_name": "Sabine",
-    "last_name": "Krause",
-    "email": "sabine.krause@gmail.com",
-    "phone": "+491705443322",
-    "case_type": "General Inquiry",
-    "urgency": 2,
-    "key_facts": [
-      "Caller wishes to speak with a lawyer.",
-      "Caller provided email address.",
-      "Caller provided phone number."
-    ],
-    "summary": "Sabine Krause is calling to request a consultation with a lawyer regarding a legal matter. She provided her email and phone number for a callback.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 1.0,
-      "last_name": 1.0,
-      "email": 1.0,
-      "phone": 1.0,
-      "case_type": 0.8
-    },
-    "needs_human_review": false,
-    "call_id": "call_13"
-  },
-  {
-    "first_name": "Rainer",
-    "last_name": "Schulz",
-    "email": "riner-schulz@web.de",
-    "phone": "+491511667778899",
+    "first_name": "Matthias",
+    "last_name": "Hoffmann",
+    "email": "m.hoffmann@etoutglupp.com",
+    "phone": "+49 054783219",
     "case_type": "Employment Law",
-    "urgency": 2,
+    "urgency": 4,
     "key_facts": [
-      "Caller received a notice of termination",
-      "Caller is seeking legal advice regarding the termination"
+      "Caller was terminated two days ago",
+      "Caller believes the termination was wrongful",
+      "Caller wants to speak with a lawyer about the termination"
     ],
-    "summary": "Mr. Rainer Schulz is seeking legal counsel regarding a termination notice and has requested contact via email or phone.",
+    "summary": "Matthias Hoffmann was terminated two days ago and believes it was unlawful. He wants to speak with a lawyer about his termination and provided his contact information.",
     "resolution_status": "needs_followup",
     "confidence_scores": {
       "first_name": 1.0,
       "last_name": 1.0,
       "email": 0.9,
       "phone": 0.9,
-      "case_type": 1.0
+      "case_type": 0.9
     },
-    "needs_human_review": false,
-    "call_id": "call_14"
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_04",
+    "quality_audit": {
+      "quality_score": 4,
+      "verdict": "review",
+      "issues": [
+        "The phone number extraction omits the leading zero, which might be important for international calls depending on the dialing plan.",
+        "The email address is missing the domain TLD, and appears to be a typo in the transcript ('etoutglupp.com' instead of a likely valid domain)."
+      ],
+      "hallucinated_fields": []
+    }
   },
   {
-    "first_name": "Monika",
-    "last_name": "Richter",
-    "email": "monika.richter@t-online.de",
-    "phone": "+4915799001122",
+    "first_name": "Sandra",
+    "last_name": "Weber",
+    "email": "sandra.weber@t-online.de",
+    "phone": "+49 172 44556677",
+    "case_type": "General Inquiry",
+    "urgency": 2,
+    "key_facts": [
+      "Caller is seeking legal advice.",
+      "Caller provided name: Sandra Weber.",
+      "Caller provided email: s-r-n-d-r-a w-e-b-e-r et t-minus-online.de",
+      "Caller provided phone: plus for 9, 1, 7, 2, 4, 4, 5, 5, 6, 6, 7, 7."
+    ],
+    "summary": "Sandra Weber called with a legal question. She provided her email address and phone number and requested a callback.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 1.0,
+      "phone": 0.9,
+      "case_type": 0.8
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_05",
+    "quality_audit": {
+      "quality_score": 3,
+      "verdict": "review",
+      "issues": [
+        "Email address: The transcript spells out 'et' for '@' and 't-minus-online' for 't-online'. The extraction interprets this correctly as 'sandra.weber@t-online.de', but the 'key_facts' field incorrectly reflects the spelled-out version.",
+        "Phone number: The transcript says 'plus für 9...' indicating a '+' prefix. The extraction correctly formats it as '+49 172 44556677', but the 'key_facts' field again incorrectly reflects the spelled-out version.",
+        "Case type: 'General Inquiry' is a reasonable interpretation, but the transcript does not explicitly state the case type, only that it is a 'rechtlichen Frage' (legal question)."
+      ],
+      "hallucinated_fields": [
+        "case_type",
+        "urgency",
+        "resolution_status"
+      ]
+    }
+  },
+  {
+    "first_name": "Klaus",
+    "last_name": "Fischer",
+    "email": "k.fischer1983@gmail.com",
+    "phone": "+49 897 7234561",
     "case_type": "Employment Law",
     "urgency": 3,
     "key_facts": [
-      "Caller received a termination notice from her employer",
-      "Caller is seeking legal advice regarding the termination"
+      "Caller received a termination notice.",
+      "Caller wants legal advice regarding the termination."
     ],
-    "summary": "Monika Richter contacted the firm to discuss a termination notice she received from her employer and requested a callback via email or phone.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 1.0,
-      "last_name": 1.0,
-      "email": 0.9,
-      "phone": 1.0,
-      "case_type": 1.0
-    },
-    "needs_human_review": false,
-    "call_id": "call_15"
-  },
-  {
-    "first_name": "James",
-    "last_name": "Anderson",
-    "email": "james.endassen@gmail.com",
-    "phone": "+4916055123456",
-    "case_type": "General Inquiry",
-    "urgency": 1,
-    "key_facts": [
-      "Caller has a legal question.",
-      "Caller wants an attorney to contact them."
-    ],
-    "summary": "James Anderson is calling with a legal question and wishes to speak with an attorney. He provided his email and phone number for a callback.",
+    "summary": "Klaus Fischer is calling regarding a termination notice he received and is seeking legal advice. He provided his email and phone number for a callback.",
     "resolution_status": "needs_followup",
     "confidence_scores": {
       "first_name": 1.0,
       "last_name": 1.0,
       "email": 1.0,
       "phone": 1.0,
-      "case_type": 0.8
+      "case_type": 1.0
     },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
     "needs_human_review": false,
-    "call_id": "call_16"
+    "call_id": "call_06",
+    "quality_audit": {
+      "quality_score": 4,
+      "verdict": "accept",
+      "issues": [
+        "The case type 'Employment Law' is an inference, not explicitly stated in the transcript.",
+        "The urgency level '3' is an interpretation of the urgency."
+      ],
+      "hallucinated_fields": []
+    }
   },
   {
-    "first_name": "Sophie",
-    "last_name": "Dubois",
-    "email": "soph.dobos@to.lu.fr",
-    "phone": "+4917166234567",
+    "first_name": "Julia",
+    "last_name": "Schröder",
+    "email": "julia.schre.drat@web.de",
+    "phone": "+49 151 22998877",
     "case_type": "General Inquiry",
     "urgency": 1,
     "key_facts": [
-      "Caller has a legal question.",
-      "Caller prefers email contact.",
-      "Caller provided email address spelled out.",
-      "Caller provided phone number."
+      "Caller wants legal information regarding a 'fall' (case/fall) that happened today.",
+      "Caller's name is Julia Schröder."
     ],
-    "summary": "Sophie Dubois is calling with a general legal question and wants to speak with an attorney. She provided her email address and phone number for contact.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 0.9,
-      "last_name": 0.9,
-      "email": 0.7,
-      "phone": 1.0,
-      "case_type": 0.8
-    },
-    "needs_human_review": false,
-    "call_id": "call_17"
-  },
-  {
-    "first_name": "Marco",
-    "last_name": "Rossi",
-    "email": "m.rossi@libero.it",
-    "phone": "+4917577345678",
-    "case_type": "General Inquiry",
-    "urgency": 1,
-    "key_facts": [
-      "Caller is seeking information for a lawyer.",
-      "Caller provided name, email, and phone number."
-    ],
-    "summary": "Marco Rossi is making a general inquiry regarding legal assistance and has provided his contact information.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 0.9,
-      "last_name": 0.9,
-      "email": 0.8,
-      "phone": 0.9,
-      "case_type": 0.5
-    },
-    "needs_human_review": false,
-    "call_id": "call_18"
-  },
-  {
-    "first_name": "Emily",
-    "last_name": "Johnson",
-    "email": "emily.johnson@yahoo.com",
-    "phone": "+4915288456789",
-    "case_type": "Landlord-Tenant",
-    "urgency": 2,
-    "key_facts": [
-      "Caller is Emily Johnson",
-      "Legal issue involving a neighborhood dispute",
-      "Requested a callback or email contact"
-    ],
-    "summary": "Emily Johnson contacted the firm regarding a neighborhood dispute and requested a callback or email follow-up.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 1.0,
-      "last_name": 1.0,
-      "email": 0.95,
-      "phone": 0.9,
-      "case_type": 0.8
-    },
-    "needs_human_review": false,
-    "call_id": "call_19"
-  },
-  {
-    "first_name": "Karlos",
-    "last_name": "Garcia",
-    "email": "Carlos.Gasja@hotmail.es",
-    "phone": "+4916399567890",
-    "case_type": "Traffic Law",
-    "urgency": 3,
-    "key_facts": [
-      "Caller had an accident today.",
-      "Needs legal consultation regarding the accident."
-    ],
-    "summary": "Karlos Garcia is calling to request a callback regarding a legal matter. He had an accident today and wants to discuss it. He provided his phone number and email address.",
+    "summary": "Julia Schröder is calling to inquire about legal information regarding a case that occurred today. She provided her contact information.",
     "resolution_status": "needs_followup",
     "confidence_scores": {
       "first_name": 0.9,
@@ -468,48 +246,252 @@
       "phone": 0.9,
       "case_type": 0.7
     },
-    "needs_human_review": false,
-    "call_id": "call_20"
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_07",
+    "quality_audit": {
+      "quality_score": 3,
+      "verdict": "review",
+      "issues": [
+        "Email address is slightly different in the transcript and the extraction. Transcript: Julia.SCHRE.DRATWAP.DE, Extraction: julia.schre.drat@web.de",
+        "The transcript states 'Aufbau und Fall', which implies a structure or setup and a case. 'General Inquiry' is a broad classification and might miss the nuance of seeking information about a specific situation ('Fall').",
+        "The transcript mentions 'Aufbau und Fall' which could be interpreted as more than just a general inquiry, potentially indicating a need for specific legal advice regarding the event itself, not just general information."
+      ],
+      "hallucinated_fields": []
+    }
   },
   {
-    "first_name": "Anna",
-    "last_name": "Kovalski",
-    "email": "anna.kovalski@gmail.com",
-    "phone": "+4917711678901",
-    "case_type": "Traffic Law",
-    "urgency": 4,
+    "first_name": "Thomas",
+    "last_name": "Neumann",
+    "email": "thomas.neumann@gmx.de",
+    "phone": "+49 088 89991234",
+    "case_type": "Family Law",
+    "urgency": 2,
     "key_facts": [
-      "Caller's name is Anna Kovalski.",
-      "Caller has a legal question regarding a traffic accident.",
-      "Caller requests a quick callback.",
-      "Caller provided email: anna.kovalski@gmail.com",
-      "Caller provided phone number: +4917711678901"
+      "Caller has a question regarding maintenance/support (Unterhalt)."
     ],
-    "summary": "Anna Kovalski is calling with a legal question about a traffic accident and requests a prompt callback. She provided her email and phone number for contact.",
+    "summary": "Thomas Neumann is calling with a question about maintenance/support. He provided his email as thomas.neumann@gmx.de and his phone number as +4908889991234.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 1.0,
+      "phone": 1.0,
+      "case_type": 1.0
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_08",
+    "quality_audit": {
+      "quality_score": 3,
+      "verdict": "review",
+      "issues": [
+        "The email address in the transcript is spelled 'G-M-X, Punkt N-E-U-M-A-N-N, et G-M-X, Punkt N-E-U-M-A-S', which is ambiguous. The extraction assumes 'thomas.neumann@gmx.de', but the spelling provided in the transcript does not clearly support the '.de' domain. It's possible it's meant to be a different domain or a typo.",
+        "The phone number in the transcript is 'Plus490, 888, 999, 1, 2, 3, 4'. The extraction ' +49 088 89991234' assumes the '0' after the country code is correct and concatenates the rest. While plausible, the transcript's structure with commas after each number suggests a potential for misinterpretation or a different numbering scheme.",
+        "The case type 'Family Law' is inferred, but the transcript only mentions 'Unterhalt' (maintenance/support). While 'Unterhalt' often falls under family law, it's not explicitly stated, making this an inference rather than a direct extraction.",
+        "The urgency is rated as 2. There is no information in the transcript to support this rating."
+      ],
+      "hallucinated_fields": [
+        "urgency"
+      ]
+    }
+  },
+  {
+    "first_name": "Petra",
+    "last_name": "Müller",
+    "email": "petra.m@yahoo.de",
+    "phone": "+49 162 7765554",
+    "case_type": "General Inquiry",
+    "urgency": 1,
+    "key_facts": [
+      "Caller is seeking legal advice.",
+      "Caller's name is Petra Müller."
+    ],
+    "summary": "Petra Müller called to discuss a legal question with an attorney. She provided her email and phone number for a callback.",
     "resolution_status": "needs_followup",
     "confidence_scores": {
       "first_name": 0.9,
       "last_name": 0.9,
-      "email": 0.9,
-      "phone": 0.9,
-      "case_type": 0.8
+      "email": 0.8,
+      "phone": 0.8,
+      "case_type": 0.7
     },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
     "needs_human_review": false,
-    "call_id": "call_21"
+    "call_id": "call_09",
+    "quality_audit": {
+      "quality_score": 4,
+      "verdict": "accept",
+      "issues": [
+        "The email address in the transcript is 'Petra-M, et Yahoo.de' which seems to be a typo or misspoken. The extraction 'petra.m@yahoo.de' corrects this, which is good, but it's not a direct transcription. The phone number is also slightly different, with spaces in the transcript (plus 4.9, 1.62, 7.76, 5.5.4) versus the extracted '+49 162 7765554'."
+      ],
+      "hallucinated_fields": []
+    }
   },
   {
-    "first_name": "Lukas",
-    "last_name": "Silva",
-    "email": "lucas.selva@uol.com.br",
-    "phone": "+4915922789012",
-    "case_type": "Employment Law",
-    "urgency": 4,
+    "first_name": "Stefan",
+    "last_name": "Zimmermann",
+    "email": "s.zimmermann@outlook.de",
+    "phone": "+49 213 33445566",
+    "case_type": "General Inquiry",
+    "urgency": 1,
     "key_facts": [
-      "Received a termination notice from employer.",
-      "Wants a quick callback.",
-      "Provided email and phone number for contact."
+      "Caller has a legal question.",
+      "Caller spells out email address.",
+      "Caller provides phone number with country code."
     ],
-    "summary": "The caller, Lukas Silva, is seeking legal advice regarding a termination notice from his employer and requests a prompt callback via email or phone.",
+    "summary": "Stefan Zimmermann is calling with a legal question and has provided his email address and phone number for a response.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 0.9,
+      "last_name": 0.9,
+      "email": 0.8,
+      "phone": 0.8,
+      "case_type": 0.7
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": false,
+    "call_id": "call_10",
+    "quality_audit": {
+      "quality_score": 4,
+      "verdict": "accept",
+      "issues": [
+        "The email address provided in the transcript is 'Outlook-Punktee', which likely means 'Outlook.de' or 'Outlook.com'. The extraction 'outlook.de' is a reasonable interpretation but not directly stated.",
+        "The phone number formatting in the extraction (+49 213 33445566) is a more structured interpretation than the spoken numbers. This is acceptable, but not a direct transcription."
+      ],
+      "hallucinated_fields": []
+    }
+  },
+  {
+    "first_name": "Brigitte",
+    "last_name": "Koch",
+    "email": "brigitte.koch@freenet.de",
+    "phone": "+49 178 11223344",
+    "case_type": "Landlord-Tenant",
+    "urgency": 2,
+    "key_facts": [
+      "Caller is involved in a neighborhood dispute."
+    ],
+    "summary": "Brigitte Koch is experiencing a neighborhood dispute and requests contact via email or phone to discuss her situation.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 1.0,
+      "phone": 1.0,
+      "case_type": 0.7
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_11",
+    "quality_audit": {
+      "quality_score": 3,
+      "verdict": "review",
+      "issues": [
+        "The case_type 'Landlord-Tenant' is not supported by the transcript. The transcript mentions a 'Nachbarschaftsstreitigkeit' (neighborhood dispute).",
+        "The phone number format is slightly inaccurate. The transcript provides '+4.9178.1122.3344' whereas the extraction is '+49 178 11223344'. While the intention is clear, the formatting differs."
+      ],
+      "hallucinated_fields": []
+    }
+  },
+  {
+    "first_name": "Michael",
+    "last_name": "Wagner",
+    "email": "michael_wagner@gmx.de",
+    "phone": "+49 699 9887766",
+    "case_type": "General Inquiry",
+    "urgency": 1,
+    "key_facts": [
+      "Caller wants to discuss a legal question with an attorney."
+    ],
+    "summary": "Michael Wagner is calling to discuss a legal question and has provided his email and phone number for a callback.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 1.0,
+      "phone": 1.0,
+      "case_type": 0.5
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": false,
+    "call_id": "call_12",
+    "quality_audit": {
+      "quality_score": 4,
+      "verdict": "accept",
+      "issues": [
+        "The phone number formatting is slightly different than the transcript. The transcript has pauses indicated by commas, which are not present in the extraction."
+      ],
+      "hallucinated_fields": []
+    }
+  },
+  {
+    "first_name": "Sabine",
+    "last_name": "Krause",
+    "email": "sabine.krause@gmail.com",
+    "phone": "+49 170 5443322",
+    "case_type": "General Inquiry",
+    "urgency": 2,
+    "key_facts": [
+      "Caller wishes to speak with a lawyer.",
+      "Caller provided an email address.",
+      "Caller provided a phone number."
+    ],
+    "summary": "Sabine Krause is calling to speak with a lawyer about a legal matter. She provided her email address and phone number for a callback.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 1.0,
+      "phone": 1.0,
+      "case_type": 0.8
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": false,
+    "call_id": "call_13",
+    "quality_audit": {
+      "quality_score": 5,
+      "verdict": "accept",
+      "issues": [],
+      "hallucinated_fields": []
+    }
+  },
+  {
+    "first_name": "Rainer",
+    "last_name": "Schulz",
+    "email": "rainer.schulz@web.de",
+    "phone": "+49 511 667778899",
+    "case_type": "Employment Law",
+    "urgency": 3,
+    "key_facts": [
+      "Caller is Rainer Schulz.",
+      "Caller received a termination notice (Kündigung).",
+      "Caller wishes to speak with a lawyer about the termination.",
+      "Caller provided an email address: R-I-N-E-R-Minus-Schulz-At-Web.de",
+      "Caller provided a phone number: +49 511 667778899"
+    ],
+    "summary": "Rainer Schulz is calling with a legal question regarding a termination notice and wishes to speak with a lawyer. He provided his email and phone number for a callback.",
     "resolution_status": "needs_followup",
     "confidence_scores": {
       "first_name": 0.9,
@@ -518,45 +500,482 @@
       "phone": 0.9,
       "case_type": 0.9
     },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
     "needs_human_review": false,
-    "call_id": "call_22"
+    "call_id": "call_14",
+    "quality_audit": {
+      "quality_score": 4,
+      "verdict": "accept",
+      "issues": [
+        "The transcript does not explicitly state the urgency. The classification of urgency as 3 is an inference.",
+        "The case type 'Employment Law' is an inference based on the term 'Kündigung' (termination), which is reasonable but not explicitly stated in the transcript."
+      ],
+      "hallucinated_fields": []
+    }
+  },
+  {
+    "first_name": "Monika",
+    "last_name": "Richter",
+    "email": "monika.richter@ertt-online.de",
+    "phone": "+49 157 99001122",
+    "case_type": "Employment Law",
+    "urgency": 3,
+    "key_facts": [
+      "Received a termination notice from employer."
+    ],
+    "summary": "Monika Richter is calling regarding a termination notice from her employer and needs legal advice. She provided her email and phone number for a callback.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 0.9,
+      "phone": 0.9,
+      "case_type": 1.0
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": false,
+    "call_id": "call_15",
+    "quality_audit": {
+      "quality_score": 4,
+      "verdict": "accept",
+      "issues": [
+        "The transcript mentions \"Guten Morgen, mein Name ist Richter, Monika Richter\" which could imply that \"Richter\" is the last name. The email and phone number are also provided as contact details. The case type \"Employment Law\" is a reasonable inference from the mention of a \"Kündigung\" (termination notice). The summary accurately reflects the caller's request and provided contact information. However, the urgency is not explicitly stated in the transcript and is assigned a value of 3, which is an inference."
+      ],
+      "hallucinated_fields": []
+    }
+  },
+  {
+    "first_name": "James",
+    "last_name": "Anderson",
+    "email": "james.endassen@gmail.com",
+    "phone": "+49 160 55123456",
+    "case_type": "General Inquiry",
+    "urgency": 2,
+    "key_facts": [
+      "Caller is James Anderson",
+      "Caller has a legal question",
+      "Caller provided email address: james.endassen@gmail.com",
+      "Caller provided phone number: +4916055123456"
+    ],
+    "summary": "James Anderson is calling with a legal question and has provided his email and phone number for a callback.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 0.9,
+      "phone": 0.9,
+      "case_type": 0.7
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": false,
+    "call_id": "call_16",
+    "quality_audit": {
+      "quality_score": 4,
+      "verdict": "accept",
+      "issues": [
+        "The email address in the transcript is 'James.endassen.gmail.com' (with a dot instead of @), but the extraction lists it as 'james.endassen@gmail.com'. This is a likely transcription error in the original transcript, but it is not precisely what was transcribed."
+      ],
+      "hallucinated_fields": []
+    }
+  },
+  {
+    "first_name": "Sophie",
+    "last_name": "Dubois",
+    "email": "soph.dobosetout@log.fr",
+    "phone": "+49 171 66234567",
+    "case_type": "General Inquiry",
+    "urgency": 1,
+    "key_facts": [
+      "Caller has a legal question.",
+      "Caller prefers email contact.",
+      "Caller provided an email address.",
+      "Caller provided a phone number."
+    ],
+    "summary": "Sophie Dubois called with a legal question and provided her email address (soph.dobosetout@log.fr) and phone number (+4917166234567).",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 0.9,
+      "phone": 1.0,
+      "case_type": 0.7
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_17",
+    "quality_audit": {
+      "quality_score": 3,
+      "verdict": "review",
+      "issues": [
+        "Email address in transcript is 'SOPH.DOBOSETOUTLOG.FR', but extracted as 'soph.dobosetout@log.fr'. The '@' and domain seem to be hallucinated.",
+        "The phone number in the transcript has spaces between digits, while the extracted phone number has them removed. This is a minor accuracy issue but should be noted.",
+        "The 'key_facts' are more of a summary of what was said rather than discrete facts.",
+        "The 'summary' field is redundant with the 'key_facts' and contains similar information."
+      ],
+      "hallucinated_fields": [
+        "email"
+      ]
+    }
+  },
+  {
+    "first_name": "Marco",
+    "last_name": "Rossi",
+    "email": "m.rossi@libero.it",
+    "phone": "+49 175 77345678",
+    "case_type": "General Inquiry",
+    "urgency": 1,
+    "key_facts": [
+      "Caller is seeking an attorney.",
+      "Caller provided name, email, and phone number."
+    ],
+    "summary": "The caller, Marco Rossi, is seeking legal assistance and has provided his contact information.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 0.9,
+      "phone": 0.9,
+      "case_type": 0.7
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": false,
+    "call_id": "call_18",
+    "quality_audit": {
+      "quality_score": 5,
+      "verdict": "accept",
+      "issues": [],
+      "hallucinated_fields": []
+    }
+  },
+  {
+    "first_name": "Emily",
+    "last_name": "Johnson",
+    "email": "emily.johnson@yahoo.com",
+    "phone": "+49 152 88456789",
+    "case_type": "Landlord-Tenant",
+    "urgency": 2,
+    "key_facts": [
+      "Caller has a legal question regarding a neighborhood dispute.",
+      "Caller requests a callback.",
+      "Caller provided phone number and email address."
+    ],
+    "summary": "Emily Johnson is calling with a legal question about a neighborhood dispute. She provided her phone number and email address and requested a callback.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 0.9,
+      "last_name": 0.9,
+      "email": 0.8,
+      "phone": 0.8,
+      "case_type": 0.7
+    },
+    "tool_corrections": [
+      "Added + prefix to country code",
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_19",
+    "quality_audit": {
+      "quality_score": 2,
+      "verdict": "review",
+      "issues": [
+        "The case_type 'Landlord-Tenant' is not supported by the transcript, which mentions a 'neighborhood dispute'.",
+        "The phone number extraction is incorrect; the transcript provides a sequence of numbers that do not form a coherent phone number, and the extracted number '+49 152 88456789' is a hallucination.",
+        "The urgency level '2' is subjective and not directly derivable from the transcript.",
+        "The key fact 'Caller provided phone number and email address' is inaccurate as the provided phone number is nonsensical."
+      ],
+      "hallucinated_fields": [
+        "phone",
+        "urgency",
+        "case_type"
+      ]
+    }
+  },
+  {
+    "first_name": "Karlos",
+    "last_name": "Garcia",
+    "email": "carlos.gasja@hotmail.es",
+    "phone": "+49 163 99567890",
+    "case_type": "Traffic Law",
+    "urgency": 3,
+    "key_facts": [
+      "Caller had an accident today.",
+      "Caller wants legal advice regarding the accident."
+    ],
+    "summary": "Karlos Garcia is calling to discuss an accident he had today and requests legal advice. He provided his phone number and email address.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 0.9,
+      "phone": 1.0,
+      "case_type": 0.8
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_20",
+    "quality_audit": {
+      "quality_score": 3,
+      "verdict": "review",
+      "issues": [
+        "The transcript mentions \"Aufverunfer\", which is likely a typo for \"Unfallverursacher\" (accident perpetrator) or \"Unfall\" (accident). The extraction interprets this as \"accident\", which is a reasonable assumption but not explicitly stated. The phrase \"mitm Steinen\" is unclear but possibly relates to the accident context.",
+        "The case type 'Traffic Law' is an interpretation. While an accident often falls under traffic law, the transcript does not explicitly state the legal area.",
+        "The urgency is rated as 3, but there is no explicit mention of urgency in the transcript that would allow for a numerical rating."
+      ],
+      "hallucinated_fields": [
+        "urgency"
+      ]
+    }
+  },
+  {
+    "first_name": "Anna",
+    "last_name": "Kovalski",
+    "email": "anna.kovalski@gmail.com",
+    "phone": "+49 177 11678901",
+    "case_type": "Traffic Law",
+    "urgency": 4,
+    "key_facts": [
+      "Caller has a legal question regarding a traffic accident.",
+      "Caller requests a quick callback."
+    ],
+    "summary": "Anna Kovalski is calling with a legal question about a traffic accident and needs a prompt response. She provided her email and phone number for follow-up.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 0.9,
+      "last_name": 0.9,
+      "email": 0.8,
+      "phone": 0.9,
+      "case_type": 0.9
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": false,
+    "call_id": "call_21",
+    "quality_audit": {
+      "quality_score": 4,
+      "verdict": "accept",
+      "issues": [
+        "The case type 'Traffic Law' is an interpretation, the transcript states 'Auferunfall' which directly translates to 'traffic accident'."
+      ],
+      "hallucinated_fields": []
+    }
+  },
+  {
+    "first_name": "Lukas",
+    "last_name": "Silva",
+    "email": "lucas.selva@uol.com.br",
+    "phone": "+49 159 22789012",
+    "case_type": "Employment Law",
+    "urgency": 4,
+    "key_facts": [
+      "Received a termination notice from employer."
+    ],
+    "summary": "Lukas Silva is calling regarding a termination notice from his employer and requests a prompt callback via email or phone.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 1.0,
+      "phone": 1.0,
+      "case_type": 1.0
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_22",
+    "quality_audit": {
+      "quality_score": 0,
+      "verdict": "review",
+      "issues": [
+        "Quality gate failed: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=AIzaSyCxaYr3OSscRUSI5mbY3JJAwxWMj-LkVqc"
+      ],
+      "hallucinated_fields": []
+    }
   },
   {
     "first_name": "Emma",
     "last_name": "Anderson",
     "email": "emma.anderson@gmail.com",
-    "phone": "+4917433890123",
+    "phone": "+49 174 33890123",
     "case_type": "General Inquiry",
-    "urgency": 4,
+    "urgency": 5,
     "key_facts": [
-      "Caller wants to discuss a legal question.",
-      "Requests a prompt callback.",
-      "Provided email and phone number for contact."
+      "Caller is requesting legal assistance.",
+      "Caller wants to speak with an attorney as soon as possible.",
+      "Caller provided email and phone number for follow-up."
     ],
-    "summary": "Emma Anderson is calling with a legal question and requests a prompt callback. She provided her email address as emma.anderson@gmail.com and her phone number as +4917433890123.",
+    "summary": "Emma Anderson is calling to ask a legal question and wants to speak with an attorney as soon as possible. She provided her email and phone number.",
     "resolution_status": "needs_followup",
     "confidence_scores": {
-      "first_name": 0.9,
-      "last_name": 0.9,
-      "email": 0.9,
-      "phone": 0.9,
-      "case_type": 0.7
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 1.0,
+      "phone": 1.0,
+      "case_type": 0.8
     },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
     "needs_human_review": false,
-    "call_id": "call_23"
+    "call_id": "call_23",
+    "quality_audit": {
+      "quality_score": 4,
+      "verdict": "accept",
+      "issues": [
+        "The case_type 'General Inquiry' is a reasonable interpretation but not explicitly stated in the transcript.",
+        "The urgency score of 5 is an interpretation of 'schnellstmöglich' (as soon as possible) and not a direct extraction."
+      ],
+      "hallucinated_fields": []
+    }
   },
   {
     "first_name": "David",
     "last_name": "Schenn",
     "email": "davd.co.co@outlook.com",
-    "phone": "+4916244901234",
+    "phone": "+49 162 44901234",
     "case_type": "Landlord-Tenant",
     "urgency": 4,
     "key_facts": [
-      "Neighbor dispute",
-      "Needs legal advice quickly"
+      "Caller is David Schenn",
+      "Caller has a legal question regarding a neighborhood dispute",
+      "Caller needs legal advice as soon as possible",
+      "Caller provided email address: davd.co.co@outlook.com",
+      "Caller provided phone number: +4916244901234"
     ],
-    "summary": "David Schenn is calling with a legal question regarding a neighbor dispute and requires urgent legal advice. He provides an email address and phone number for contact.",
+    "summary": "David Schenn is seeking urgent legal advice regarding a neighborhood dispute. He provided his email and phone number for follow-up.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 0.9,
+      "phone": 1.0,
+      "case_type": 0.8
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_24",
+    "quality_audit": {
+      "quality_score": 3,
+      "verdict": "review",
+      "issues": [
+        "The case type was extracted as \"Landlord-Tenant\", but the transcript mentions a \"Nachbarschaftsstreitigkeit\" which translates to \"neighborhood dispute\", not specifically a landlord-tenant issue.",
+        "The phone number in the transcript is spoken as \"plus 4 9 1 6 2 4 4 9 0 1 2 3 4\". The extraction omits the spaces and presents it as \"+4916244901234\", which is a slight, though potentially common, deviation.",
+        "The urgency level is rated as 4, but the transcript only states \"schnellstmögliche rechtliche Beratung\" (as soon as possible legal advice), which is subjective and not easily quantifiable to a specific numerical rating without further context or a defined scale."
+      ],
+      "hallucinated_fields": []
+    }
+  },
+  {
+    "first_name": "Marie",
+    "last_name": "Lefavre",
+    "email": "marie.lefravre.et@yahoo.fr",
+    "phone": "+49 176 55012345",
+    "case_type": "General Inquiry",
+    "urgency": 2,
+    "key_facts": [
+      "Caller is requesting a callback as soon as possible.",
+      "Caller provided phone number and email address."
+    ],
+    "summary": "Marie Lefavre is calling to request a callback as soon as possible regarding an unspecified legal matter. She provided her phone number and email address.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 0.9,
+      "phone": 1.0,
+      "case_type": 0.5
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_25",
+    "quality_audit": {
+      "quality_score": 4,
+      "verdict": "review",
+      "issues": [
+        "The email address in the extraction 'marie.lefravre.et@yahoo.fr' has a typo. The transcript states 'marie.lefavre.et@yahoo.fr'."
+      ],
+      "hallucinated_fields": []
+    }
+  },
+  {
+    "first_name": "Arme",
+    "last_name": "Tassan",
+    "email": "ahmide.hassaen@gmail.com",
+    "phone": "+49 151 66123456",
+    "case_type": "Landlord-Tenant",
+    "urgency": 3,
+    "key_facts": [
+      "Caller has a legal question regarding a neighbor dispute.",
+      "Caller provided a phone number and email address.",
+      "Caller requests a quick callback."
+    ],
+    "summary": "Arme Tassan is calling with a legal question about a neighbor dispute and has provided contact information for a callback.",
+    "resolution_status": "needs_followup",
+    "confidence_scores": {
+      "first_name": 1.0,
+      "last_name": 1.0,
+      "email": 1.0,
+      "phone": 1.0,
+      "case_type": 0.8
+    },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_26",
+    "quality_audit": {
+      "quality_score": 2,
+      "verdict": "review",
+      "issues": [
+        "The 'case_type' is classified as 'Landlord-Tenant', but the transcript describes a 'Nachbarschaftsstreitigkeit' (neighbor dispute), which is a different legal area.",
+        "The phone number was transcribed with an extra space between '4.9' and '151', and also between '151' and '6'. The correct extraction is '+49 151 6 6123456' or '+4915166123456'. The extraction has '+49 151 66123456', missing a digit.",
+        "The email extraction is missing the dot before 'gmail.com'."
+      ],
+      "hallucinated_fields": []
+    }
+  },
+  {
+    "first_name": "Olivia",
+    "last_name": "Smith",
+    "email": "olivier.smith@icloud.com",
+    "phone": "+49 173 77234567",
+    "case_type": "Employment Law",
+    "urgency": 3,
+    "key_facts": [
+      "Received a termination notice.",
+      "Requests a quick response."
+    ],
+    "summary": "Olivia Smith is calling regarding a termination notice she received and requests the firm contact her as soon as possible via email or phone.",
     "resolution_status": "needs_followup",
     "confidence_scores": {
       "first_name": 0.9,
@@ -565,152 +984,139 @@
       "phone": 0.9,
       "case_type": 0.7
     },
-    "needs_human_review": false,
-    "call_id": "call_24"
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_27",
+    "quality_audit": {
+      "quality_score": 3,
+      "verdict": "review",
+      "issues": [
+        "The case type 'Employment Law' is an interpretation not directly stated in the transcript. The transcript mentions 'Königung', which means termination, but does not specify the area of law.",
+        "The email address is slightly misspelled in the extraction ('olivier.smithet-iCloud.com' instead of 'olivier.smith@icloud.com')."
+      ],
+      "hallucinated_fields": []
+    }
   },
   {
-    "first_name": "Marie",
-    "last_name": "Lefavre",
-    "email": "marie.lefavre@yahoo.fr",
-    "phone": "+4917655012345",
-    "case_type": "General Inquiry",
-    "urgency": 3,
+    "first_name": "Yuki",
+    "last_name": "Tanaka",
+    "email": "yuki.tanaka@gmail.com",
+    "phone": "+49 179 88345678",
+    "case_type": "Traffic Law",
+    "urgency": 4,
     "key_facts": [
-      "Caller requested a callback as soon as possible",
-      "Provided contact information via phone and email"
+      "Caller has a legal question regarding an accident.",
+      "Caller wants a quick response.",
+      "Caller provided email: yuki.tanaka.at gmail.com",
+      "Caller provided phone: +4 9 1 7 9 8 8 3 4 5 6 7 8"
     ],
-    "summary": "Marie Lefavre contacted the firm with an urgent request and provided her contact details for a callback.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 1.0,
-      "last_name": 1.0,
-      "email": 0.95,
-      "phone": 1.0,
-      "case_type": 0.7
-    },
-    "needs_human_review": false,
-    "call_id": "call_25"
-  },
-  {
-    "first_name": "Arme",
-    "last_name": "Tassan",
-    "email": "ahmide.hassaen@gmail.com",
-    "phone": "+4915166123456",
-    "case_type": "General Inquiry",
-    "urgency": 3,
-    "key_facts": [
-      "Caller is Arme Tassan.",
-      "Needs legal advice regarding a neighborhood dispute.",
-      "Provided phone number for callback.",
-      "Provided email address for contact.",
-      "Requested a quick callback."
-    ],
-    "summary": "Arme Tassan is seeking legal advice for a neighborhood dispute and has provided their phone number and email address, requesting a quick callback.",
+    "summary": "Yuki Tanaka is calling with a legal question about an accident and requests a prompt response. They provided their email as yuki.tanaka.at gmail.com and phone number as +4917988345678.",
     "resolution_status": "needs_followup",
     "confidence_scores": {
       "first_name": 0.9,
       "last_name": 0.9,
-      "email": 1.0,
-      "phone": 1.0,
-      "case_type": 1.0
-    },
-    "needs_human_review": false,
-    "call_id": "call_26"
-  },
-  {
-    "first_name": "Olivia",
-    "last_name": "Smith",
-    "email": "olivier.smith@iCloud.com",
-    "phone": "+4917377234567",
-    "case_type": "Employment Law",
-    "urgency": 4,
-    "key_facts": [
-      "Caller received a termination notice (Kündigung).",
-      "Caller requests the firm to contact her as soon as possible.",
-      "Caller provided email and phone number for contact."
-    ],
-    "summary": "Olivia Smith is seeking legal advice regarding a termination notice she received and requests the firm to contact her promptly via email or phone.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 1.0,
-      "last_name": 1.0,
       "email": 0.9,
-      "phone": 1.0,
-      "case_type": 0.8
-    },
-    "needs_human_review": false,
-    "call_id": "call_27"
-  },
-  {
-    "first_name": "Juki",
-    "last_name": "Tanaka",
-    "email": "yukai.tanaka@gmail.com",
-    "phone": "+4917988345678",
-    "case_type": "General Inquiry",
-    "urgency": 3,
-    "key_facts": [
-      "Caller involved in an accident",
-      "Requesting a callback"
-    ],
-    "summary": "Juki Tanaka called regarding an accident and requested a callback via email or phone.",
-    "resolution_status": "needs_followup",
-    "confidence_scores": {
-      "first_name": 0.95,
-      "last_name": 1.0,
-      "email": 0.9,
-      "phone": 1.0,
+      "phone": 0.9,
       "case_type": 0.7
     },
-    "needs_human_review": false,
-    "call_id": "call_28"
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_28",
+    "quality_audit": {
+      "quality_score": 2,
+      "verdict": "review",
+      "issues": [
+        "Email address contains '.at' which is incorrect and should be '@'.",
+        "Phone number formatting is incorrect, extra spaces and missing a digit.",
+        "The urgency level of 4 seems to be an arbitrary interpretation, as the transcript only states 'schnellstmögliche Rückmeldung' (quickest possible feedback).",
+        "Case type 'Traffic Law' is an assumption, the transcript mentions 'Unfall' (accident) but doesn't specify traffic."
+      ],
+      "hallucinated_fields": [
+        "urgency",
+        "case_type"
+      ]
+    }
   },
   {
     "first_name": "Isabella",
     "last_name": "Martinez",
     "email": "isabella.martinez@gmail.com",
-    "phone": "+4915799456789",
+    "phone": "+49 157 99456789",
     "case_type": "General Inquiry",
     "urgency": 1,
     "key_facts": [
-      "Caller is seeking legal consultation",
-      "Caller prefers contact via email",
-      "Caller provided phone number as an alternative contact method"
+      "Caller has a legal question.",
+      "Caller wants to discuss with a lawyer.",
+      "Caller provided email and phone number for follow-up."
     ],
-    "summary": "Isabella Martinez is requesting a legal consultation and provided her contact information for a follow-up.",
+    "summary": "Isabella Martinez called with a legal question and wants to discuss it with a lawyer. She provided her email and phone number for a callback.",
     "resolution_status": "needs_followup",
     "confidence_scores": {
-      "first_name": 1.0,
-      "last_name": 1.0,
-      "email": 0.95,
-      "phone": 1.0,
+      "first_name": 0.9,
+      "last_name": 0.9,
+      "email": 0.9,
+      "phone": 0.9,
       "case_type": 0.8
     },
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
     "needs_human_review": false,
-    "call_id": "call_29"
+    "call_id": "call_29",
+    "quality_audit": {
+      "quality_score": 4,
+      "verdict": "accept",
+      "issues": [
+        "The email address in the transcript is 'Isabella.machtines.adgmail.com', which appears to be a typo. The extracted email 'isabella.martinez@gmail.com' is a corrected version. While likely intended, it's not an exact match to the transcript.",
+        "The phone number in the transcript is '+4.915799456789'. The extracted phone number '+49 157 99456789' appears to have a space inserted after the country code. This is likely a formatting correction, but not an exact match.",
+        "The `key_facts` and `summary` fields are reasonable inferences but not direct quotes or explicitly stated facts in the transcript. They represent a good interpretation of the caller's intent."
+      ],
+      "hallucinated_fields": []
+    }
   },
   {
     "first_name": "Liam",
     "last_name": "O'Brien",
     "email": "liam.obrien@gmail.com",
-    "phone": "+4916900567890",
+    "phone": "+49 169 00567890",
     "case_type": "Landlord-Tenant",
-    "urgency": 3,
+    "urgency": 4,
     "key_facts": [
-      "Caller is experiencing a neighborhood dispute.",
-      "Caller needs legal advice quickly.",
-      "Caller provided email address spelled out.",
-      "Caller provided phone number."
+      "Caller has a legal question regarding a neighborhood dispute.",
+      "Caller needs legal advice as soon as possible.",
+      "Caller provided an email address.",
+      "Caller provided a phone number."
     ],
-    "summary": "Liam O'Brien is calling regarding a neighborhood dispute and requires urgent legal advice. He provided his email as liam.obrien@gmail.com and his phone number as +4916900567890.",
+    "summary": "Liam O'Brien is calling about a neighborhood dispute and needs urgent legal advice. He provided his email and phone number for follow-up.",
     "resolution_status": "needs_followup",
     "confidence_scores": {
       "first_name": 0.9,
       "last_name": 0.9,
-      "email": 1.0,
-      "phone": 1.0,
+      "email": 0.95,
+      "phone": 0.95,
       "case_type": 0.8
     },
-    "needs_human_review": false,
-    "call_id": "call_30"
+    "tool_corrections": [
+      "Formatted to standard layout"
+    ],
+    "reflection_applied": false,
+    "needs_human_review": true,
+    "call_id": "call_30",
+    "quality_audit": {
+      "quality_score": 3,
+      "verdict": "review",
+      "issues": [
+        "The case type 'Landlord-Tenant' is not supported by the transcript. The transcript mentions a 'Nachbarschaftsstreitigkeit' which translates to 'neighborhood dispute', not specifically landlord-tenant issues.",
+        "The urgency score of 4 is subjective and not directly quantifiable from the transcript. The caller states they need advice 'schnellstmöglich' (as soon as possible), which could be interpreted in various ways regarding urgency."
+      ],
+      "hallucinated_fields": []
+    }
   }
 ]

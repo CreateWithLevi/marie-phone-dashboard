@@ -39,6 +39,12 @@ function scoreBadge(s) {
   if (s >= 40) return 'bg-[#fe4c02]/10 text-[#fe4c02]'
   return 'bg-[#c41c1c]/10 text-[#c41c1c]'
 }
+
+function verdictBadge(v) {
+  if (v === 'accept') return 'bg-[#0bdf50]/10 text-[#0a8a36]'
+  if (v === 'reject') return 'bg-[#c41c1c]/10 text-[#c41c1c]'
+  return 'bg-[#fe4c02]/10 text-[#fe4c02]'
+}
 </script>
 
 <template>
@@ -81,6 +87,7 @@ function scoreBadge(s) {
             <th class="text-center px-4 py-3 text-[11px] text-muted font-medium uppercase tracking-widest">Urgency</th>
             <th class="text-center px-4 py-3 text-[11px] text-muted font-medium uppercase tracking-widest">Score</th>
             <th class="text-left px-4 py-3 text-[11px] text-muted font-medium uppercase tracking-widest">Status</th>
+            <th class="text-center px-4 py-3 text-[11px] text-muted font-medium uppercase tracking-widest">Audit</th>
             <th class="text-center px-4 py-3 text-[11px] text-muted font-medium uppercase tracking-widest">Review</th>
           </tr>
         </thead>
@@ -109,7 +116,18 @@ function scoreBadge(s) {
             </td>
             <td class="px-4 py-3 text-black-60 capitalize text-xs">{{ call.resolution_status?.replace(/_/g, ' ') }}</td>
             <td class="px-4 py-3 text-center">
+              <span
+                v-if="call.quality_audit?.verdict"
+                class="inline-block px-2 py-0.5 rounded text-[11px] font-medium capitalize"
+                :class="verdictBadge(call.quality_audit.verdict)"
+                :title="'Quality ' + (call.quality_audit.quality_score ?? '?') + '/5'"
+              >
+                {{ call.quality_audit.verdict }}
+              </span>
+            </td>
+            <td class="px-4 py-3 text-center">
               <span v-if="call.needs_human_review" class="text-[#ff5600] font-bold" title="Needs human review">!</span>
+              <span v-if="call.reflection_applied" class="ml-1 text-[10px] text-[#2167a8]" title="Reflection applied">R</span>
             </td>
           </tr>
         </tbody>
