@@ -1,4 +1,4 @@
-.PHONY: setup seed run dev pipeline evaluate clean
+.PHONY: setup seed run dev pipeline test evaluate clean
 
 # Quick start: make setup && make seed && make run
 setup:
@@ -28,6 +28,10 @@ pipeline:
 
 pipeline-resume:
 	.venv/bin/python -m pipeline.run_pipeline --resume
+
+test:
+	@echo "=== Running unit tests ==="
+	.venv/bin/python -m pytest tests/ -v
 
 evaluate:
 	@echo "=== Extraction Accuracy vs Ground Truth ==="

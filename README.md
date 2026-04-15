@@ -24,6 +24,7 @@ make run      # Start at http://localhost:8000
 
 ```bash
 make dev      # Django (8000) + Vite HMR (5173)
+make test     # Run unit tests for the deterministic layer
 ```
 
 ### Running the pipeline from scratch
@@ -194,6 +195,26 @@ The low email accuracy **validates the design** — this is exactly why we built
 | `reject` | 0 | No outright hallucinations detected |
 
 **Reflection triggered:** 0/30. Tools fixed most low-confidence cases before Reflection needed to fire — Reflection is the safety net, not the workhorse. The pattern is wired in and tested, ready to catch cases tools can't resolve.
+
+## Testing
+
+Unit tests cover the **deterministic layer** — the parts of the pipeline where behavior is fully specified and testable in isolation:
+
+```bash
+make test
+```
+
+| Test file | Coverage |
+|-----------|----------|
+| `tests/test_tools.py` | Email validation (domain typos, `"at"→@` reconstruction, lowercasing), phone E.164 normalization, contact completeness quality grading, `apply_tools()` confidence adjustment behavior |
+| `tests/test_guardrails.py` | Transcript sanitization (empty, whitespace, length clamp, injection patterns), `validate_agent_output()` required-field checking |
+| `tests/test_analyzer_helpers.py` | `_normalize()` schema enforcement (case type fallback, urgency clamping, confidence scoring defaults) |
+
+**What's intentionally not unit-tested:** the LLM stages (`analyze_call`, `audit_extraction`, `score_lead`). Mocking an LLM in a unit test just tests your mock. Those stages are validated via:
+- **LLM-as-Judge Quality Gate** — every extraction is audited against the transcript
+- **Ground-truth evaluation** — `extraction_accuracy` computed on every seed load is effectively a regression test
+
+This is a deliberate trade-off: test contracts that have truth values, evaluate behaviors that have distributions.
 
 ## Limitations
 
