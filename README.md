@@ -69,11 +69,10 @@ make pipeline-resume   # Resume from last checkpoint (retry failures only)
 
 **Honest naming:** Whisper is a deterministic speech-to-text model, not an agent — it doesn't decide anything. We call the LLM stages "agents" because they make judgment calls (what to extract, when to re-extract, when to flag). Conflating the two would be marketing, not engineering.
 
-**Why split the LLM work into two agents?**
-1. **Separation of concerns** — extraction quality and lead scoring are different problems with different failure modes
-2. **Independent testability** — each agent can be evaluated and improved in isolation
-3. **Quota isolation** — the Analyzer runs on one API key/model, Lead Intel on another, so rate limits on one don't block the other
-4. **Debuggability** — when output is wrong, you can pinpoint which stage failed
+**Why split the LLM work across multiple stages instead of one big prompt?**
+1. **Scoped responsibility** — the Analyzer extracts structured fields, the Judge audits the extraction, the Lead Intel agent scores against the playbook. Each prompt is small and targeted.
+2. **Debuggability** — when output is wrong you can trace exactly where it broke: Whisper mishearing, Analyzer hallucinating, Tools over-correcting, or Judge being too lenient. A monolithic prompt flattens all of that into one black box.
+3. **Independent testability** — each stage can be evaluated and iterated on in isolation, with its own failure modes and its own quality signal.
 
 ### Four Patterns in the Analyzer Agent
 
@@ -84,9 +83,11 @@ A naive version of this pipeline would be a single LLM call — transcript in, J
 | **Guardrails** | 32 | Clamps transcript length, regex-detects prompt injection (`ignore previous instructions`, `</system>`, etc.) before the LLM ever sees it | `pipeline/guardrails.py` |
 | **Tool Calling** | 21 | Deterministic email validator (regex + domain typo correction + `"at"→@` reconstruction) and E.164 phone formatter. Tools **auto-lower** the LLM's self-reported confidence when they find invalid data, giving Reflection a chance to fire | `pipeline/tools.py` |
 | **Reflection** | 18 | When `first_name`/`last_name`/`email`/`phone` confidence falls below 0.6, re-extracts with a focused prompt that hints at NATO/German spelling alphabet. Only adopts the new result if it's more confident than the first pass | `pipeline/agent_analyzer.py`, `prompts/reflection.txt` |
-| **LLM-as-Judge** | 17 | A second LLM (independent API key, independent context) audits the Analyzer's output for faithfulness, completeness, and accuracy. Returns `accept` / `review` / `reject` + a 1–5 quality score. `review` or `reject` auto-trips `needs_human_review` | `pipeline/quality_gate.py`, `prompts/quality_gate.txt` |
+| **LLM-as-Judge** | 17 | A second, independent LLM call audits the Analyzer's output for faithfulness, completeness, and accuracy. Different prompt, fresh context, optionally a different model. Returns `accept` / `review` / `reject` + a 1–5 quality score. `review` or `reject` auto-trips `needs_human_review` | `pipeline/quality_gate.py`, `prompts/quality_gate.txt` |
 
-**Why LLM-as-Judge needs its own API key:** self-evaluation is peer pressure with one peer. Using a separate key (and therefore separate quota + separate request context) gives genuine independence — the Judge doesn't share the Analyzer's priors.
+**Why LLM-as-Judge is a separate LLM call:** self-evaluation in a single pass is peer pressure with one peer — the model defends what it just produced. Splitting it into a second call with a fresh context and an audit-framed prompt makes the Judge re-read the transcript independently, without inheriting the Analyzer's reasoning chain. The two calls can also use different models (e.g. Analyzer on `gemini-2.5-flash`, Judge on `flash-lite`) for ensemble-style cross-checking.
+
+**A note on the dual API key setup:** this codebase happens to run Analyzer and Judge on separate Gemini API keys, but that's a pragmatic free-tier workaround for rate-limit isolation (so exhausting one quota doesn't block the other), not a requirement of the pattern. In a paid environment a single key works fine — what matters is the independent call, not the independent credential.
 
 **Per-call execution:** The pipeline processes each call through all stages before moving to the next, rather than running all Analyzer calls first and all Lead Intel calls second. If the API quota runs out mid-run, you have N complete results instead of N partial stages. `--resume` retries only the failures.
 

@@ -236,7 +236,9 @@ Implemented four patterns from *Generative AI Design Patterns*, each with real c
 | **Reflection** | 18 | `agent_analyzer.py` + `prompts/reflection.txt` | When `first_name`/`last_name`/`email`/`phone` confidence < 0.6, re-extract with a focused prompt hinting at NATO/German spelling alphabet. Only adopt the new result if it's more confident than the first pass |
 | **LLM-as-Judge** | 17 | `quality_gate.py` + `prompts/quality_gate.txt` | Independent second LLM audits the Analyzer's output for faithfulness, completeness, accuracy. Returns `accept` / `review` / `reject` + 1–5 quality score |
 
-**Why LLM-as-Judge uses a separate API key:** self-evaluation is peer pressure with one peer. A different key means different quota, different request context, different priors — the Judge genuinely doesn't know what the Analyzer was thinking.
+**Why the Judge is a separate LLM call (not a separate key):** self-evaluation in a single pass is peer pressure with one peer — the model defends what it just produced. The independence that matters comes from splitting the work into a second call with a fresh context and an audit-framed prompt, so the Judge re-reads the transcript without inheriting the Analyzer's reasoning chain. The two calls can also use different models for ensemble-style cross-checking.
+
+This codebase runs Analyzer and Judge on separate Gemini keys, but that's a pragmatic free-tier rate-limit workaround — the pattern works with a single key on a paid tier. I'm calling this out explicitly because in an earlier version of the README I leaned on "separate key" as if it were the source of independence, and it isn't. The source is the independent call; the key is an implementation detail.
 
 ### Honest Naming: Agent 1 → Transcription Step
 
