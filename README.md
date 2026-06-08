@@ -1,10 +1,21 @@
 # Marie Phone Dashboard
 
-An AI-powered dashboard for law firms to review, score, and act on phone intake calls. Built as a Product Engineer challenge for JUPUS.
+An AI-powered dashboard for law firms to review, score, and act on phone intake calls. Originally built as a Product Engineer challenge for JUPUS, now structured as an open reference implementation for safer, auditable AI intake workflows.
 
 **The problem:** Lawyers using an AI phone assistant (Marie) receive raw transcripts and contact info. They still manually read each transcript to decide: *Is this a good lead? Was the intake complete? What do I need to follow up on?*
 
 **The solution:** A production-minded pipeline that transforms audio recordings into structured, actionable intelligence — with configurable intake playbooks that create a continuous improvement loop. The **Analyzer Agent** is wired with four patterns from modern LLM engineering: **Guardrails**, **Tool Calling**, **Reflection**, and **LLM-as-Judge**.
+
+## Why This Exists
+
+This repo is meant to be useful beyond the original product challenge: it shows how to build an AI workflow where model output is not blindly trusted. The pipeline separates deterministic validation from LLM judgment, keeps quality signals visible in the UI, and makes human review an explicit state rather than an afterthought.
+
+| Goal | How the project approaches it |
+|------|-------------------------------|
+| **Safer AI extraction** | Prompt-injection checks, schema normalization, deterministic email/phone tools, and confidence lowering before review |
+| **Auditable decisions** | Per-field confidence, tool corrections, judge verdicts, hallucinated-field flags, lead-score reasoning, and playbook gaps |
+| **Maintainable prompts** | Small scoped prompts for extraction, reflection, quality audit, and lead scoring instead of one monolithic prompt |
+| **Contributor-friendly testing** | 134 fast tests for deterministic contracts, plus seed data and ground-truth evaluation for pipeline behavior |
 
 ## Quick Start
 
@@ -39,6 +50,19 @@ make test     # Run unit tests for the deterministic layer
 make pipeline          # Run full pipeline (transcribe + analyze + score)
 make pipeline-resume   # Resume from last checkpoint (retry failures only)
 ```
+
+## Security & Privacy Notes
+
+This project handles the kind of data that would be sensitive in production: legal intake transcripts, caller names, emails, phone numbers, case details, and LLM-generated summaries. The checked-in seed data is pre-processed demo data, and raw audio recordings are intentionally excluded from the repository.
+
+Security-relevant parts of the implementation include:
+
+- Input guardrails for common prompt-injection patterns before transcripts are passed to the LLM
+- Deterministic contact-data tools that validate and normalize email/phone fields instead of trusting model output
+- A separate LLM-as-Judge quality gate that can mark outputs for human review
+- Explicit limitations around authentication, RBAC, SQLite, and production deployment requirements
+
+Before using this with real client data, add firm-level authentication, role-based access control, secret management, audit logs, retention/deletion policies, and a production database such as PostgreSQL.
 
 ## Architecture
 
@@ -225,6 +249,18 @@ This is a deliberate trade-off: test contracts that have truth values, evaluate 
 - **LLM confidence calibration** — LLMs tend to be overconfident. 30 calls is insufficient to calibrate scoring. Production needs a feedback loop (lawyer confirms/corrects → retrain).
 - **No audio playback** — dashboard shows transcript but cannot play the original recording.
 - **Playbook changes don't retroactively re-score** — editing a playbook updates future evaluations, not past calls. Production would offer a re-run option.
+
+## Open Source Roadmap
+
+The next useful improvements are focused on making the project easier to review, run, and extend:
+
+- Add a license file and contribution guide for external contributors
+- Add dependency and configuration security checks to CI
+- Add example `.env` documentation with safe defaults
+- Add authentication/RBAC scaffolding for production-like deployments
+- Expand prompt-injection and transcript-edge-case fixtures
+- Add an optional OpenAI backend alongside Gemini and Ollama
+- Add a re-run workflow when playbooks change
 
 ## Project Structure
 
